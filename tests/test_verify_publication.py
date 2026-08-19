@@ -78,6 +78,32 @@ class PublicationVerifierTests(unittest.TestCase):
         path.write_text(path.read_text(encoding="utf-8") + "\n" + "a" * 40 + "\n", encoding="utf-8")
         self.assertTrue(any("full private-style Git SHA" in error for error in verify(self.root)))
 
+    def test_released_record_accepts_observed_release_commit_sha(self) -> None:
+        path = self.root / "evidence/publication.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["status"] = "RELEASED"
+        data["publication_controls"]["release_approval"] = "APPROVED"
+        data["publication_controls"]["observed_release"]["commit_sha"] = "a" * 40
+        path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        self.assertEqual(verify(self.root), [])
+
+    def test_observed_release_sha_is_not_exempt_while_ready(self) -> None:
+        path = self.root / "evidence/publication.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["publication_controls"]["observed_release"]["commit_sha"] = "a" * 40
+        path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        self.assertTrue(any("full private-style Git SHA" in error for error in verify(self.root)))
+
+    def test_observed_release_sha_exemption_is_field_scoped(self) -> None:
+        path = self.root / "evidence/publication.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["status"] = "RELEASED"
+        data["publication_controls"]["release_approval"] = "APPROVED"
+        data["publication_controls"]["observed_release"]["commit_sha"] = "a" * 40
+        data["publication_controls"]["observed_release"]["doi"] = "b" * 40
+        path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        self.assertTrue(any("full private-style Git SHA" in error for error in verify(self.root)))
+
     def test_possible_secret_fails(self) -> None:
         path = self.root / "README.md"
         path.write_text(path.read_text(encoding="utf-8") + "\nghp_" + "A" * 24 + "\n", encoding="utf-8")

@@ -230,6 +230,17 @@ def verify_publication_record(root: Path, errors: list[str], release: bool = Fal
             errors.append("READY or RELEASED status requires repository publication approval")
     if isinstance(controls, dict) and controls.get("release_approval") not in {"PENDING", "APPROVED"}:
         errors.append("release_approval must be PENDING or APPROVED")
+    observed_release = (
+        controls.get("observed_release") if isinstance(controls, dict) else None
+    )
+    if data.get("status") == "RELEASED":
+        commit_sha = (
+            observed_release.get("commit_sha")
+            if isinstance(observed_release, dict)
+            else None
+        )
+        if not isinstance(commit_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", commit_sha):
+            errors.append("RELEASED status requires a lowercase observed release commit SHA")
     if release:
         if data.get("status") not in {"READY", "RELEASED"}:
             errors.append("release verification requires publication status READY or RELEASED")
@@ -291,9 +302,33 @@ def verify_sensitive_content(
             if repository.casefold() != CANONICAL_REPOSITORY.casefold():
                 errors.append(f"non-canonical GitHub repository URL found in {relative}")
 
-        # Workflow actions are intentionally pinned to full upstream SHAs.
+        # Workflow actions are intentionally pinned to full upstream SHAs. The
+        # one other permitted full SHA is the structured, public release commit
+        # recorded after publication. Redact only that exact JSON field; any
+        # duplicate or out-of-field SHA remains visible to the scanner.
+        sha_scan_text = text
+        if relative == "evidence/publication.json":
+            try:
+                publication = json.loads(text)
+            except json.JSONDecodeError:
+                publication = {}
+            controls = publication.get("publication_controls", {})
+            observed = controls.get("observed_release", {}) if isinstance(controls, dict) else {}
+            observed_sha = observed.get("commit_sha") if isinstance(observed, dict) else None
+            if (
+                publication.get("status") == "RELEASED"
+                and isinstance(observed_sha, str)
+                and re.fullmatch(r"[0-9a-f]{40}", observed_sha)
+            ):
+                field = re.compile(
+                    r'("commit_sha"\s*:\s*")' + re.escape(observed_sha) + r'(")'
+                )
+                sha_scan_text, _ = field.subn(
+                    r"\1<observed-release-commit>\2", sha_scan_text, count=1
+                )
+
         workflow_source = relative.startswith(".github/workflows/")
-        if not workflow_source and full_sha.search(text):
+        if not workflow_source and full_sha.search(sha_scan_text):
             errors.append(f"full private-style Git SHA found in {relative}")
         if internal_id.search(text):
             errors.append(f"private workflow identifier found in {relative}")

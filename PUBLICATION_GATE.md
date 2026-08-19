@@ -48,7 +48,7 @@
 
 - [ ] The immutable release is verified after publication.
 - [ ] `CITATION.cff` validates and matches the released version.
-- [ ] Zenodo integration is enabled before the release event.
+- [x] Zenodo integration is enabled before the release event.
 - [ ] A version DOI is issued and recorded.
 
 ## F. Independent-review follow-up
