@@ -1,0 +1,74 @@
+# SPDX-License-Identifier: Apache-2.0
+name: Build and attest release evidence
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  release-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify publication boundary
+        run: |
+          python -m unittest discover -s tests -v
+          python tools/verify_publication.py --release .
+
+      - name: Require GitHub-verified tag and commit signatures
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          ref_json="$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/tags/${GITHUB_REF_NAME}")"
+          test "$(jq -r '.object.type' <<<"${ref_json}")" = "tag"
+          tag_object_sha="$(jq -r '.object.sha' <<<"${ref_json}")"
+
+          tag_json="$(gh api "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object_sha}")"
+          jq -e --arg commit "${GITHUB_SHA}" '
+            .verification.verified == true and
+            .object.type == "commit" and
+            .object.sha == $commit
+          ' <<<"${tag_json}" >/dev/null
+
+          commit_json="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}")"
+          jq -e '.commit.verification.verified == true' \
+            <<<"${commit_json}" >/dev/null
+
+      - name: Build deterministic source bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          artifact="agentic-engineering-assurance-system-${GITHUB_REF_NAME}.tar.gz"
+          git archive \
+            --format=tar.gz \
+            --prefix="agentic-engineering-assurance-system-${GITHUB_REF_NAME}/" \
+            --output="dist/${artifact}" \
+            "${GITHUB_SHA}"
+          (cd dist && sha256sum "${artifact}" > SHA256SUMS)
+
+      - name: Generate GitHub artifact attestations
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-path: "dist/*"
+
+      - name: Upload release evidence
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: release-evidence-${{ github.ref_name }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30

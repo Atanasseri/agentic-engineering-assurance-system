@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: Apache-2.0
+name: Verify public record
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Compile verifier and tests
+        run: python -m py_compile tools/verify_publication.py tests/test_verify_publication.py
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Verify publication boundary
+        run: python tools/verify_publication.py .

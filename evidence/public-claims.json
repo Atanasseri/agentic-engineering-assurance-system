@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "AEA-PUBLIC-CLAIMS-v1.0.0",
+  "source_commitment": {
+    "baseline_id": "PTE-2026-08-19-v1.0.1",
+    "manifest_sha256": "ecd87eb9581e535c95dee1beb0871fa5fc1382c9d3847eb5ebba337bc5ef827f",
+    "access": "CONTROLLED_PRIVATE",
+    "does_not_establish": "The digest does not disclose or independently validate the private baseline."
+  },
+  "claims": [
+    {
+      "id": "AUD-001",
+      "statement": "Seven audit reports were preserved across three governed reviews.",
+      "evidence_class": "BASELINE-GIT-VERIFIED",
+      "status": "SUPPORTED",
+      "public_sources": [
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "That every attempted round was auditable; one attempted round was explicitly recorded as not auditable.",
+        "That the review set contains every defect that existed."
+      ]
+    },
+    {
+      "id": "AUD-002",
+      "statement": "The retained reports contain 33 findings: 11 HIGH and 22 MEDIUM, with no CRITICAL finding recorded.",
+      "evidence_class": "BASELINE-GIT-VERIFIED",
+      "status": "SUPPORTED",
+      "public_sources": [
+        "README.md",
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "The absence of undiscovered defects.",
+        "That every finding had the same operational impact."
+      ]
+    },
+    {
+      "id": "AUD-003",
+      "statement": "Resolution records mark 32 findings as fixed and one as settled through an owner-ratified criteria revision.",
+      "evidence_class": "COMMITTED-RECORD",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "README.md",
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "That the revised criterion was originally met.",
+        "That every final-round correction received another audit round."
+      ]
+    },
+    {
+      "id": "AUD-004",
+      "statement": "Three final-round findings were recorded as defects introduced by earlier corrective work.",
+      "evidence_class": "COMMITTED-RECORD",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "That all later corrections were defect-free.",
+        "That every remediation defect was discovered."
+      ]
+    },
+    {
+      "id": "AUD-005",
+      "statement": "Each of the six substantive audit reports recorded a changes-required verdict.",
+      "evidence_class": "BASELINE-GIT-VERIFIED",
+      "status": "SUPPORTED",
+      "public_sources": [
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "That remediation was never completed.",
+        "That every attempted audit round produced a substantive verdict."
+      ]
+    },
+    {
+      "id": "BND-001",
+      "statement": "The implemented assurance has explicit isolation, liveness, evidence, and review limitations.",
+      "evidence_class": "LIMITATION",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "docs/05-limitations-and-reassessment.md"
+      ],
+      "does_not_establish": [
+        "Formal verification, full isolation, defect-free operation, or external certification."
+      ]
+    },
+    {
+      "id": "GOV-001",
+      "statement": "The system design binds review to exact source checkpoints and durable transition records.",
+      "evidence_class": "DESIGN-CONTRACT",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "docs/01-system-overview.md",
+        "docs/03-assurance-method.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "Correctness of every implementation change.",
+        "External institutional independence of the audit role."
+      ]
+    },
+    {
+      "id": "GOV-002",
+      "statement": "The final governed review was limited to two owner-authorized audit rounds.",
+      "evidence_class": "COMMITTED-RECORD",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "docs/03-assurance-method.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "A third audit of final-round corrections within the same review."
+      ]
+    },
+    {
+      "id": "OPS-001",
+      "statement": "Existing project environments were recorded as migrated and locally connected without project-specific drift.",
+      "evidence_class": "COMMITTED-RECORD",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "Future runtime state.",
+        "Application visibility."
+      ]
+    },
+    {
+      "id": "OPS-002",
+      "statement": "The owner separately confirmed the final application-visible state.",
+      "evidence_class": "OWNER-CONFIRMED",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "Cryptographic remote attestation.",
+        "Future application visibility."
+      ]
+    },
+    {
+      "id": "REL-001",
+      "statement": "Approval and release are modeled as separate controlled actions.",
+      "evidence_class": "DESIGN-CONTRACT",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "docs/01-system-overview.md",
+        "docs/03-assurance-method.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "That approval alone merges, tags, publishes, or deploys source."
+      ]
+    },
+    {
+      "id": "REL-002",
+      "statement": "The committed completion record reports a versioned correctness release.",
+      "evidence_class": "COMMITTED-RECORD",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "Independent reproduction of the private release.",
+        "That the public technical record has itself been released."
+      ]
+    },
+    {
+      "id": "SYS-001",
+      "statement": "The system design separates owner authority, implementation, read-only audit, durable evidence, and release.",
+      "evidence_class": "DESIGN-CONTRACT",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "README.md",
+        "docs/01-system-overview.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "External certification or legal independence.",
+        "That no privileged operator could bypass every host control."
+      ]
+    },
+    {
+      "id": "SYS-002",
+      "statement": "The committed completion record reports the capability categories summarized in the public implementation record.",
+      "evidence_class": "COMMITTED-RECORD",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "A public reconstruction of the private implementation.",
+        "Future operation outside the recorded release boundary."
+      ]
+    },
+    {
+      "id": "TST-001",
+      "statement": "The committed completion record reports 1,111 tests green in both the hermetic and explicit live-host tiers.",
+      "evidence_class": "COMMITTED-RECORD",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "README.md",
+        "docs/02-implementation-record.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "An independently replayed final run.",
+        "A retained raw final test log or JUnit artifact.",
+        "Complete correctness of the system."
+      ]
+    }
+  ]
+}

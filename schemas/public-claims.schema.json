@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Atanasseri/agentic-engineering-assurance-system/schemas/public-claims.schema.json",
+  "title": "Agentic Engineering Assurance Public Claims",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_id",
+    "source_commitment",
+    "claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_commitment": {
+      "type": "object",
+      "required": [
+        "baseline_id",
+        "manifest_sha256",
+        "access",
+        "does_not_establish"
+      ],
+      "properties": {
+        "baseline_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "access": {
+          "const": "CONTROLLED_PRIVATE"
+        },
+        "does_not_establish": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "evidence_class",
+          "status",
+          "public_sources",
+          "does_not_establish"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}-[0-9]{3}$"
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_class": {
+            "enum": [
+              "DIGEST-ANCHORED",
+              "BASELINE-GIT-VERIFIED",
+              "COMMITTED-RECORD",
+              "OWNER-CONFIRMED",
+              "DESIGN-CONTRACT",
+              "LIMITATION"
+            ]
+          },
+          "status": {
+            "enum": [
+              "SUPPORTED",
+              "QUALIFIED"
+            ]
+          },
+          "public_sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "does_not_establish": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

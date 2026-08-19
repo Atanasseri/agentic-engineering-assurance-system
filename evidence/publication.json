@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "AEA-PUBLIC-v1.0.0",
+  "title": "Agentic Engineering Assurance System",
+  "subtitle": "Governance, Auditability, and Release Integrity for AI-Assisted Software Engineering",
+  "record_type": "PUBLIC_TECHNICAL_SYSTEM_RECORD",
+  "version": "1.0.0",
+  "status": "READY",
+  "author": {
+    "name": "Ata Nasseri",
+    "affiliation": "Solofounders",
+    "role": "System Designer and Assurance Owner"
+  },
+  "canonical_repository": "https://github.com/Atanasseri/agentic-engineering-assurance-system",
+  "derived_from": {
+    "baseline_id": "PTE-2026-08-19-v1.0.1",
+    "baseline_manifest_sha256": "ecd87eb9581e535c95dee1beb0871fa5fc1382c9d3847eb5ebba337bc5ef827f",
+    "access": "CONTROLLED_PRIVATE"
+  },
+  "licenses": {
+    "documentation_and_visuals": "CC-BY-NC-4.0",
+    "software_utilities": "Apache-2.0"
+  },
+  "publication_controls": {
+    "repository_publication_approval": {
+      "status": "APPROVED",
+      "approved_by": "Ata Nasseri",
+      "approved_on": "2026-08-19",
+      "scope": [
+        "complete public repository content",
+        "professional identity and affiliation",
+        "split license model",
+        "disclosed aggregate audit figures"
+      ],
+      "excludes": [
+        "GitHub Release publication",
+        "release tag creation",
+        "DOI archival"
+      ]
+    },
+    "release_approval": "PENDING",
+    "release_requirements": {
+      "signed_commit": true,
+      "signed_annotated_tag": true,
+      "immutable_release": true,
+      "artifact_attestation": true
+    },
+    "observed_release": {
+      "commit_sha": null,
+      "tag": null,
+      "release_url": null,
+      "doi": null
+    }
+  },
+  "independent_review": {
+    "status": "NOT_PERFORMED",
+    "reviewed_release": null,
+    "public_statement": null
+  }
+}

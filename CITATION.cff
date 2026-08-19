@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use or discuss this system record, please cite it using this metadata."
+title: "Agentic Engineering Assurance System"
+version: 1.0.0
+type: software
+authors:
+  - family-names: Nasseri
+    given-names: Ata
+    affiliation: Solofounders
+repository-code: "https://github.com/Atanasseri/agentic-engineering-assurance-system"
+url: "https://github.com/Atanasseri/agentic-engineering-assurance-system"
+abstract: >-
+  A public technical system record describing governance, auditability, evidence,
+  and release integrity for AI-assisted software engineering.
+keywords:
+  - agentic engineering
+  - AI governance
+  - software assurance
+  - auditability
+  - release integrity
+license:
+  - CC-BY-NC-4.0
+  - Apache-2.0

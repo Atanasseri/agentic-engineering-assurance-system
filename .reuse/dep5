@@ -1,0 +1,38 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Agentic Engineering Assurance System
+Upstream-Contact: Ata Nasseri
+Source: https://github.com/Atanasseri/agentic-engineering-assurance-system
+
+Files: README.md
+       CHANGELOG.md
+       CITATION.cff
+       LICENSE.md
+       NOTICE.md
+       PUBLICATION_CHARTER.md
+       PUBLICATION_GATE.md
+       SECURITY.md
+       assets/*
+       docs/*
+       evidence/*
+       release/*
+       review/*
+       schemas/*
+       .github/CODEOWNERS
+       .gitattributes
+       .gitignore
+Copyright: 2026 Ata Nasseri
+License: CC-BY-NC-4.0
+
+Files: tools/*
+       tests/*
+       .github/workflows/*
+Copyright: 2026 Ata Nasseri
+License: Apache-2.0
+
+Files: LICENSES/Apache-2.0.txt
+Copyright: Apache Software Foundation
+License: Apache-2.0
+
+Files: LICENSES/CC-BY-NC-4.0.txt
+Copyright: Creative Commons Corporation
+License: CC-BY-NC-4.0
