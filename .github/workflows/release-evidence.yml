@@ -26,6 +26,25 @@ jobs:
           python -m unittest discover -s tests -v
           python tools/verify_publication.py --release .
 
+      - name: Bind tag to approved Release identity
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+
+          with open("evidence/publication.json", encoding="utf-8") as handle:
+              publication = json.load(handle)
+
+          expected = f"v{publication['version']}"
+          approved = publication["publication_controls"]["release_approval_record"]["release"]
+          actual = os.environ["GITHUB_REF_NAME"]
+          if actual != expected or actual != approved:
+              raise SystemExit(
+                  f"tag identity mismatch: actual={actual!r}, expected={expected!r}, approved={approved!r}"
+              )
+          PY
+
       - name: Require GitHub-verified tag and commit signatures
         shell: bash
         env:

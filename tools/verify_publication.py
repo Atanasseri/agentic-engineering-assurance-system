@@ -246,6 +246,28 @@ def verify_publication_record(root: Path, errors: list[str], release: bool = Fal
             errors.append("release verification requires publication status READY or RELEASED")
         if not isinstance(controls, dict) or controls.get("release_approval") != "APPROVED":
             errors.append("release verification requires explicit release approval")
+        approval_record = (
+            controls.get("release_approval_record")
+            if isinstance(controls, dict)
+            else None
+        )
+        expected_release = f"v{data.get('version')}"
+        if (
+            not isinstance(approval_record, dict)
+            or approval_record.get("release") != expected_release
+        ):
+            errors.append(
+                "release verification requires a version-bound Release approval record"
+            )
+        elif (
+            not isinstance(approval_record.get("approved_by"), str)
+            or not approval_record["approved_by"].strip()
+            or not isinstance(approval_record.get("approved_on"), str)
+            or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", approval_record["approved_on"])
+            or not isinstance(approval_record.get("statement"), str)
+            or not approval_record["statement"].strip()
+        ):
+            errors.append("Release approval record is incomplete")
 
     derived = data.get("derived_from")
     if not isinstance(derived, dict):

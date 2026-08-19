@@ -38,7 +38,13 @@
         "DOI archival"
       ]
     },
-    "release_approval": "PENDING",
+    "release_approval": "APPROVED",
+    "release_approval_record": {
+      "approved_by": "Ata Nasseri",
+      "approved_on": "2026-08-19",
+      "release": "v1.0.0",
+      "statement": "Ata Nasseri, as Assurance Owner, authorizes publication of Release v1.0.0 from the signed commit containing this approval record, subject to required GitHub Actions passing on that exact commit, GitHub verification of the commit and annotated tag signatures, and completion of the release bundle, SHA-256 checksums, and provenance attestation before publication of the immutable GitHub Release. This decision also authorizes Zenodo archival of that exact public release; it does not assert DOI issuance, independent review, or certification."
+    },
     "release_requirements": {
       "signed_commit": true,
       "signed_annotated_tag": true,

@@ -28,3 +28,6 @@ jobs:
 
       - name: Verify publication boundary
         run: python tools/verify_publication.py .
+
+      - name: Verify approved Release candidate
+        run: python tools/verify_publication.py --release .

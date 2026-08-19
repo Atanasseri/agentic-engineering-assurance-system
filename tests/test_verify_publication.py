@@ -26,7 +26,13 @@ class PublicationVerifierTests(unittest.TestCase):
     def test_repository_passes(self) -> None:
         self.assertEqual(verify(self.root), [])
 
-    def test_release_mode_rejects_repository_only_approval(self) -> None:
+    def test_release_mode_rejects_pending_release_approval(self) -> None:
+        path = self.root / "evidence/publication.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["status"] = "READY"
+        data["publication_controls"]["release_approval"] = "PENDING"
+        data["publication_controls"].pop("release_approval_record", None)
+        path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         errors = verify(self.root, release=True)
         self.assertFalse(any("status READY or RELEASED" in error for error in errors))
         self.assertTrue(any("explicit release approval" in error for error in errors))
@@ -46,6 +52,34 @@ class PublicationVerifierTests(unittest.TestCase):
         data["publication_controls"]["release_approval"] = "APPROVED"
         path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         self.assertEqual(verify(self.root, release=True), [])
+
+    def test_release_mode_rejects_approval_without_release_record(self) -> None:
+        path = self.root / "evidence/publication.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["status"] = "READY"
+        data["publication_controls"]["release_approval"] = "APPROVED"
+        data["publication_controls"].pop("release_approval_record", None)
+        path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        self.assertTrue(
+            any(
+                "version-bound Release approval record" in error
+                for error in verify(self.root, release=True)
+            )
+        )
+
+    def test_release_mode_rejects_wrong_release_identity(self) -> None:
+        path = self.root / "evidence/publication.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["status"] = "READY"
+        data["publication_controls"]["release_approval"] = "APPROVED"
+        data["publication_controls"]["release_approval_record"]["release"] = "v9.9.9"
+        path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        self.assertTrue(
+            any(
+                "version-bound Release approval record" in error
+                for error in verify(self.root, release=True)
+            )
+        )
 
     def test_missing_required_file_fails(self) -> None:
         (self.root / "README.md").unlink()

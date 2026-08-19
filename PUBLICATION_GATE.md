@@ -2,10 +2,13 @@
 
 > **Repository decision:** AUTHORIZED FOR PUBLIC REPOSITORY DEPLOYMENT
 >
-> **Release decision:** PENDING OWNER APPROVAL
+> **Release decision:** APPROVED FOR PUBLICATION OF `v1.0.0`
+> **Release authority:** Ata Nasseri, Assurance Owner
+> **Approval date:** 2026-08-19
 >
-> Repository deployment and Release publication are separate owner-controlled
-> actions. The first is approved; the second remains closed.
+> Repository deployment and Release publication were authorized as separate
+> owner-controlled actions. Release publication remains subject to the technical
+> conditions below; outcome checks remain pending until they are observed.
 
 ## A. Repository-deployment authorization
 
@@ -25,7 +28,7 @@
 - [x] The private, uncommitted deny-list preflight passes.
 - [x] A final metadata and secret scan passes on the complete Git history.
 
-## C. Remote controls required before Release approval
+## C. Remote controls required before Release publication
 
 - [ ] GitHub Actions passes on the exact release commit.
 - [x] The public repository has a protected `main` branch.
@@ -38,7 +41,7 @@
 
 ## D. Release authorization and identity
 
-- [ ] Owner has explicitly approved publication of Release `v1.0.0`.
+- [x] Owner has explicitly approved publication of Release `v1.0.0`.
 - [ ] The release commit has a GitHub `Verified` signature.
 - [ ] The annotated release tag has a GitHub `Verified` signature.
 - [ ] Release assets and SHA-256 checksums are complete.
@@ -60,5 +63,7 @@
 
 Only Ata Nasseri, as Assurance Owner, may authorize repository deployment or
 Release publication. Automation may report control status; it cannot issue
-either authority. The repository approval recorded here must not be interpreted
-as Release approval.
+either authority. The repository approval and Release approval remain separate
+authorities. The Release approval recorded here applies only to `v1.0.0` and
+does not establish completion of any unchecked technical, archival, or
+independent-review outcome.
