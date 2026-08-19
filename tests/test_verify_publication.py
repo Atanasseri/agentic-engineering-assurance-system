@@ -93,6 +93,16 @@ class PublicationVerifierTests(unittest.TestCase):
         path = self.root / "README.md"
         path.write_text(path.read_text(encoding="utf-8") + "\n[missing](docs/missing.md)\n", encoding="utf-8")
         self.assertTrue(any("broken local link" in error for error in verify(self.root)))
+    def test_citation_rejects_repository_wide_apache_alternative(self) -> None:
+        path = self.root / "CITATION.cff"
+        text = path.read_text(encoding="utf-8").replace(
+            "license: CC-BY-NC-4.0",
+            "license:\n  - CC-BY-NC-4.0\n  - Apache-2.0",
+        )
+        path.write_text(text, encoding="utf-8")
+        self.assertTrue(
+            any("complete cited record" in error for error in verify(self.root))
+        )
 
     def test_duplicate_claim_id_fails(self) -> None:
         path = self.root / "evidence/public-claims.json"

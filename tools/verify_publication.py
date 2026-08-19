@@ -333,12 +333,16 @@ def verify_citation(root: Path, errors: list[str]) -> None:
         "family-names: Nasseri",
         "given-names: Ata",
         "affiliation: Solofounders",
-        "  - CC-BY-NC-4.0",
-        "  - Apache-2.0",
+        "license: CC-BY-NC-4.0",
     )
     for value in required:
         if value not in text:
             errors.append(f"CITATION.cff missing required value: {value}")
+    if "  - Apache-2.0" in text:
+        errors.append(
+            "CITATION.cff must not advertise Apache-2.0 as an alternative "
+            "license for the complete cited record"
+        )
 
 
 def verify(

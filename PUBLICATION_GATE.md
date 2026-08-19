@@ -23,17 +23,18 @@
 - [x] `python tools/verify_publication.py .` passes on the final candidate.
 - [x] `python -m unittest discover -s tests -v` passes on the final candidate.
 - [x] The private, uncommitted deny-list preflight passes.
-- [ ] A final metadata and secret scan passes on the complete Git history.
+- [x] A final metadata and secret scan passes on the complete Git history.
 
 ## C. Remote controls required before Release approval
 
 - [ ] GitHub Actions passes on the exact release commit.
-- [ ] The public repository has a protected `main` branch.
-- [ ] Force-push and branch deletion are blocked.
-- [ ] The `verify` status check is required.
-- [ ] Release-tag updates and deletion are blocked.
-- [ ] Immutable releases are enabled before the first release is published.
-- [ ] GitHub private vulnerability reporting is enabled.
+- [x] The public repository has a protected `main` branch.
+- [x] Force-push and branch deletion are blocked.
+- [x] The `verify` status check is required.
+- [x] Release-tag updates and deletion are blocked.
+- [x] Immutable releases are enabled before the first release is published.
+- [x] GitHub private vulnerability reporting is enabled.
+- [x] GitHub verified the owner's dedicated SSH signing identity.
 
 ## D. Release authorization and identity
 
