@@ -50,6 +50,12 @@ class PublicationVerifierTests(unittest.TestCase):
         data = json.loads(path.read_text(encoding="utf-8"))
         data["status"] = "READY"
         data["publication_controls"]["release_approval"] = "APPROVED"
+        data["publication_controls"]["observed_release"] = {
+            "commit_sha": None,
+            "tag": None,
+            "release_url": None,
+            "doi": None,
+        }
         path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         self.assertEqual(verify(self.root, release=True), [])
 
@@ -115,15 +121,17 @@ class PublicationVerifierTests(unittest.TestCase):
     def test_released_record_accepts_observed_release_commit_sha(self) -> None:
         path = self.root / "evidence/publication.json"
         data = json.loads(path.read_text(encoding="utf-8"))
+        observed = data["publication_controls"]["observed_release"]
         data["status"] = "RELEASED"
         data["publication_controls"]["release_approval"] = "APPROVED"
-        data["publication_controls"]["observed_release"]["commit_sha"] = "a" * 40
+        observed["commit_sha"] = "a" * 40
         path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         self.assertEqual(verify(self.root), [])
 
     def test_observed_release_sha_is_not_exempt_while_ready(self) -> None:
         path = self.root / "evidence/publication.json"
         data = json.loads(path.read_text(encoding="utf-8"))
+        data["status"] = "READY"
         data["publication_controls"]["observed_release"]["commit_sha"] = "a" * 40
         path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         self.assertTrue(any("full private-style Git SHA" in error for error in verify(self.root)))
@@ -137,6 +145,30 @@ class PublicationVerifierTests(unittest.TestCase):
         data["publication_controls"]["observed_release"]["doi"] = "b" * 40
         path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         self.assertTrue(any("full private-style Git SHA" in error for error in verify(self.root)))
+
+    def test_released_record_rejects_mismatched_tag(self) -> None:
+        path = self.root / "evidence/publication.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["publication_controls"]["observed_release"]["tag"] = "v9.9.9"
+        path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        self.assertTrue(any("observed release tag" in error for error in verify(self.root)))
+
+    def test_released_record_rejects_missing_provenance_digest(self) -> None:
+        path = self.root / "evidence/publication.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["publication_controls"]["observed_release"]["bundle_sha256"] = None
+        path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        self.assertTrue(any("bundle_sha256" in error for error in verify(self.root)))
+
+    def test_released_record_rejects_citation_doi_mismatch(self) -> None:
+        path = self.root / "CITATION.cff"
+        path.write_text(
+            path.read_text(encoding="utf-8").replace(
+                "10.5281/zenodo.22019208", "10.5281/zenodo.99999999"
+            ),
+            encoding="utf-8",
+        )
+        self.assertTrue(any("CITATION.cff DOI" in error for error in verify(self.root)))
 
     def test_possible_secret_fails(self) -> None:
         path = self.root / "README.md"

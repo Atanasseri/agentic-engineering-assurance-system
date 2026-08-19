@@ -3,6 +3,7 @@ message: "If you use or discuss this system record, please cite it using this me
 title: "Agentic Engineering Assurance System"
 version: 1.0.0
 date-released: 2026-08-19
+doi: "10.5281/zenodo.22019208"
 type: software
 authors:
   - family-names: Nasseri

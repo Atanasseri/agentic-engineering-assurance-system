@@ -1,5 +1,7 @@
 # Agentic Engineering Assurance System
 
+[![DOI](https://zenodo.org/badge/1339810888.svg)](https://doi.org/10.5281/zenodo.22019207)
+
 <!-- public-claims: AUD-002 AUD-003 SYS-001 TST-001 -->
 
 > **Governance, Auditability, and Release Integrity for AI-Assisted Software Engineering**
@@ -142,3 +144,8 @@ overstating what was examined.
 Documentation and visuals are licensed under CC BY-NC 4.0. Small software
 utilities in this repository are licensed under Apache 2.0. See
 [License](LICENSE.md), [Notice](NOTICE.md), and [Citation](CITATION.cff).
+
+Persistent identifiers:
+
+- Version `v1.0.0`: [10.5281/zenodo.22019208](https://doi.org/10.5281/zenodo.22019208)
+- All versions: [10.5281/zenodo.22019207](https://doi.org/10.5281/zenodo.22019207)

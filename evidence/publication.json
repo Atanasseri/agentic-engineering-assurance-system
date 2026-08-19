@@ -5,7 +5,7 @@
   "subtitle": "Governance, Auditability, and Release Integrity for AI-Assisted Software Engineering",
   "record_type": "PUBLIC_TECHNICAL_SYSTEM_RECORD",
   "version": "1.0.0",
-  "status": "READY",
+  "status": "RELEASED",
   "author": {
     "name": "Ata Nasseri",
     "affiliation": "Solofounders",
@@ -52,10 +52,17 @@
       "artifact_attestation": true
     },
     "observed_release": {
-      "commit_sha": null,
-      "tag": null,
-      "release_url": null,
-      "doi": null
+      "commit_sha": "3e7293ecf99ceb2ec97a28f9c888eb3850dc03d1",
+      "tag": "v1.0.0",
+      "release_url": "https://github.com/Atanasseri/agentic-engineering-assurance-system/releases/tag/v1.0.0",
+      "published_at": "2026-08-19T22:56:31Z",
+      "immutable": true,
+      "evidence_run_url": "https://github.com/Atanasseri/agentic-engineering-assurance-system/actions/runs/32308546078",
+      "bundle_sha256": "598ca929037c78b856297143c932b54900cdc02ec99d36fb7dd132be2c7b10a9",
+      "manifest_sha256": "bc903bdbd0810e3800e0ebf3762c5a45b6ccfbe5a27380ee220a4e29b8d35d73",
+      "doi": "10.5281/zenodo.22019208",
+      "concept_doi": "10.5281/zenodo.22019207",
+      "zenodo_record_url": "https://zenodo.org/records/22019208"
     }
   },
   "independent_review": {

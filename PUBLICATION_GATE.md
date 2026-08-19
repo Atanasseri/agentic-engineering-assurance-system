@@ -30,7 +30,7 @@
 
 ## C. Remote controls required before Release publication
 
-- [ ] GitHub Actions passes on the exact release commit.
+- [x] GitHub Actions passes on the exact release commit.
 - [x] The public repository has a protected `main` branch.
 - [x] Force-push and branch deletion are blocked.
 - [x] The `verify` status check is required.
@@ -42,17 +42,17 @@
 ## D. Release authorization and identity
 
 - [x] Owner has explicitly approved publication of Release `v1.0.0`.
-- [ ] The release commit has a GitHub `Verified` signature.
-- [ ] The annotated release tag has a GitHub `Verified` signature.
-- [ ] Release assets and SHA-256 checksums are complete.
-- [ ] GitHub artifact provenance is generated for the release bundle.
+- [x] The release commit has a GitHub `Verified` signature.
+- [x] The annotated release tag has a GitHub `Verified` signature.
+- [x] Release assets and SHA-256 checksums are complete.
+- [x] GitHub artifact provenance is generated for the release bundle.
 
 ## E. Post-release validation and archival
 
-- [ ] The immutable release is verified after publication.
-- [ ] `CITATION.cff` validates and matches the released version.
+- [x] The immutable release is verified after publication.
+- [x] `CITATION.cff` validates and matches the released version.
 - [x] Zenodo integration is enabled before the release event.
-- [ ] A version DOI is issued and recorded.
+- [x] A version DOI is issued and recorded.
 
 ## F. Independent-review follow-up
 

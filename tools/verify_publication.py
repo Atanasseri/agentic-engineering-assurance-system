@@ -241,6 +241,52 @@ def verify_publication_record(root: Path, errors: list[str], release: bool = Fal
         )
         if not isinstance(commit_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", commit_sha):
             errors.append("RELEASED status requires a lowercase observed release commit SHA")
+        version = data.get("version")
+        expected_tag = f"v{version}"
+        expected_release_url = (
+            "https://github.com/Atanasseri/agentic-engineering-assurance-system/"
+            f"releases/tag/{expected_tag}"
+        )
+        required_observations = {
+            "tag": expected_tag,
+            "release_url": expected_release_url,
+            "immutable": True,
+        }
+        if not isinstance(observed_release, dict):
+            errors.append("RELEASED status requires observed release metadata")
+            observed_release = {}
+        for key, expected in required_observations.items():
+            if observed_release.get(key) != expected:
+                errors.append(f"observed release {key} does not match the released version")
+        if not re.fullmatch(
+            r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z",
+            str(observed_release.get("published_at", "")),
+        ):
+            errors.append("observed release published_at must be a UTC timestamp")
+        if not re.fullmatch(
+            r"https://github\.com/Atanasseri/agentic-engineering-assurance-system/actions/runs/[0-9]+",
+            str(observed_release.get("evidence_run_url", "")),
+        ):
+            errors.append("observed release evidence_run_url is invalid")
+        for key in ("bundle_sha256", "manifest_sha256"):
+            if not re.fullmatch(r"[0-9a-f]{64}", str(observed_release.get(key, ""))):
+                errors.append(f"observed release {key} must be a lowercase SHA-256 digest")
+        doi = observed_release.get("doi")
+        concept_doi = observed_release.get("concept_doi")
+        if not isinstance(doi, str) or not re.fullmatch(r"10\.5281/zenodo\.[0-9]+", doi):
+            errors.append("observed release DOI is invalid")
+        if not isinstance(concept_doi, str) or not re.fullmatch(
+            r"10\.5281/zenodo\.[0-9]+", concept_doi
+        ):
+            errors.append("observed release concept DOI is invalid")
+        if doi == concept_doi:
+            errors.append("version DOI and concept DOI must be distinct")
+        record_id = doi.rsplit(".", 1)[-1] if isinstance(doi, str) else ""
+        expected_zenodo_url = f"https://zenodo.org/records/{record_id}"
+        if observed_release.get("zenodo_record_url") != expected_zenodo_url:
+            errors.append("observed Zenodo record URL does not match the version DOI")
+        if not isinstance(controls, dict) or controls.get("release_approval") != "APPROVED":
+            errors.append("RELEASED status requires explicit release approval")
     if release:
         if data.get("status") not in {"READY", "RELEASED"}:
             errors.append("release verification requires publication status READY or RELEASED")
@@ -400,6 +446,18 @@ def verify_citation(root: Path, errors: list[str]) -> None:
             "CITATION.cff must not advertise Apache-2.0 as an alternative "
             "license for the complete cited record"
         )
+    publication_path = root / "evidence/publication.json"
+    if publication_path.is_file():
+        try:
+            publication = _load_json(publication_path)
+        except (OSError, ValueError, json.JSONDecodeError):
+            publication = {}
+        if publication.get("status") == "RELEASED":
+            controls = publication.get("publication_controls", {})
+            observed = controls.get("observed_release", {}) if isinstance(controls, dict) else {}
+            doi = observed.get("doi") if isinstance(observed, dict) else None
+            if not isinstance(doi, str) or f'doi: "{doi}"' not in text:
+                errors.append("CITATION.cff DOI must match the observed version DOI")
 
 
 def verify(
