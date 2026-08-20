@@ -14,6 +14,7 @@
       "evidence_class": "BASELINE-GIT-VERIFIED",
       "status": "SUPPORTED",
       "public_sources": [
+        "README.md",
         "docs/02-implementation-record.md",
         "docs/04-public-evidence-index.md"
       ],
@@ -58,6 +59,7 @@
       "evidence_class": "COMMITTED-RECORD",
       "status": "QUALIFIED",
       "public_sources": [
+        "README.md",
         "docs/02-implementation-record.md",
         "docs/04-public-evidence-index.md"
       ],
@@ -86,6 +88,7 @@
       "evidence_class": "LIMITATION",
       "status": "QUALIFIED",
       "public_sources": [
+        "README.md",
         "docs/05-limitations-and-reassessment.md"
       ],
       "does_not_establish": [
@@ -98,6 +101,7 @@
       "evidence_class": "DESIGN-CONTRACT",
       "status": "QUALIFIED",
       "public_sources": [
+        "README.md",
         "docs/01-system-overview.md",
         "docs/03-assurance-method.md",
         "docs/04-public-evidence-index.md"
@@ -113,6 +117,7 @@
       "evidence_class": "COMMITTED-RECORD",
       "status": "QUALIFIED",
       "public_sources": [
+        "README.md",
         "docs/03-assurance-method.md",
         "docs/04-public-evidence-index.md"
       ],
@@ -154,6 +159,7 @@
       "evidence_class": "DESIGN-CONTRACT",
       "status": "QUALIFIED",
       "public_sources": [
+        "README.md",
         "docs/01-system-overview.md",
         "docs/03-assurance-method.md",
         "docs/04-public-evidence-index.md"

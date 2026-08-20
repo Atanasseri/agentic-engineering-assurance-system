@@ -2,19 +2,45 @@
 
 [![DOI](https://zenodo.org/badge/1339810888.svg)](https://doi.org/10.5281/zenodo.22019207)
 
-<!-- public-claims: AUD-002 AUD-003 SYS-001 TST-001 -->
+<!-- public-claims: AUD-001 AUD-002 AUD-003 AUD-004 BND-001 GOV-001 GOV-002 REL-001 SYS-001 TST-001 -->
 
 > **Governance, Auditability, and Release Integrity for AI-Assisted Software Engineering**
 
-The Agentic Engineering Assurance System is a governed approach to long-running,
-AI-assisted software delivery. It separates implementation, technical review,
-human authority, evidence, and release so that important decisions remain
-traceable after the conversation that produced them has ended.
+The Agentic Engineering Assurance System is a governed system for long-running,
+AI-assisted software delivery. It keeps implementation, read-only technical
+audit, human authority, evidence, and release distinct so that material
+decisions remain attributable and reviewable after the conversation that
+produced them has ended.
 
-This repository is the public technical system record. It explains the design,
-the implemented control model, the recorded outcomes, and the known limits in a
-form that can be reviewed without exposing the private operating environment or
-its sealed evidence archive.
+This repository is the bounded public technical record. It documents the
+design, implemented control model, recorded outcomes, release evidence, and
+known limitations without disclosing the private operating environment or its
+sealed evidence archive.
+
+## In 30 seconds
+
+| Question | Short answer |
+| --- | --- |
+| **What is this?** | A governed system for long-running, AI-assisted software delivery, documented as a public technical record. |
+| **What does it separate?** | Human authority, implementation, read-only technical audit, durable evidence, and release. |
+| **How is it controlled?** | Bounded work packages, pinned source, explicit finding disposition, owner gates, and a separate release step. |
+| **What can a reader inspect?** | [Public claims and their boundaries](docs/04-public-evidence-index.md), [Release v1.0.0](https://github.com/Atanasseri/agentic-engineering-assurance-system/releases/tag/v1.0.0), [publication metadata](evidence/publication.json), and the [version DOI](https://doi.org/10.5281/zenodo.22019208). |
+| **Who is accountable?** | **Ata Nasseri — System Designer and Assurance Owner.** |
+| **What is the current boundary?** | Evidence-backed and publicly released; independent technical review has not yet been performed, and no external certification is claimed. |
+
+## Professional accountability
+
+**Ata Nasseri — System Designer and Assurance Owner**
+
+The accountable scope represented here includes translating objectives and
+constraints into bounded acceptance criteria; defining authority boundaries;
+authorizing audit rounds; deciding criteria changes and residual risk; and
+governing release. AI implementation and audit roles operated within those
+human-defined boundaries.
+
+This describes accountable system and assurance leadership. It does not claim
+sole authorship of every implementation artifact or independent certification
+of one's own work.
 
 ## Why it exists
 
@@ -107,7 +133,8 @@ description:
 | [Signing and Release](release/SIGNING_AND_RELEASE.md) | Signed commit, annotated tag, immutable release, and provenance process |
 | [DOI and Archival](release/DOI_AND_ARCHIVAL.md) | Zenodo and persistent citation process |
 | [Independent Review Brief](review/REVIEW_BRIEF.md) | Scope for a qualified external reviewer |
-| [Assurance Statement Template](review/ASSURANCE_STATEMENT_TEMPLATE.md) | Required structure of the signed external conclusion |
+| [Independent Review Checklist](review/REVIEW_CHECKLIST.md) | Evidence, identity, method, and conclusion checks for the reviewer |
+| [Independent Technical Review Statement Template](review/ASSURANCE_STATEMENT_TEMPLATE.md) | Required structure of the signed external conclusion |
 
 ## Evidence relationship
 
@@ -123,21 +150,19 @@ The digest is a commitment to a specific private manifest. It does not reveal
 the manifest, independently validate its contents, or grant public access to
 the underlying evidence.
 
-## Professional accountability
+## Current assurance status
 
-**Ata Nasseri — System Designer and Assurance Owner**
+Release `v1.0.0` has verified signed Git objects and an immutable GitHub
+Release. Its release assets have SHA-256 checksums and GitHub artifact
+attestations; Zenodo provides a separate persistent version DOI. Independent
+technical review has not yet been performed, and no external certification is
+claimed. The [independent-review package](review/REVIEW_BRIEF.md) is prepared
+so that a qualified reviewer can assess that precise signed release and
+publish a scoped conclusion tied to it.
 
-Accountability included objectives, constraints, acceptance criteria,
-authority boundaries, audit authorization, owner decisions, residual-risk
-acceptance, and release governance. AI implementation and audit roles operated
-within those human-defined boundaries.
-
-## Assurance statement
-
-This repository is evidence-backed but is not yet externally certified. The
-independent-review package is prepared so that a qualified reviewer can assess
-a precise signed release and publish a scoped assurance statement without
-overstating what was examined.
+The signed `v1.0.0` Release remains the immutable citable object. The default
+branch contains later publication-record and documentation refinements; they
+do not alter the signed tag, Release assets, or DOI.
 
 ## Use and citation
 
