@@ -1,13 +1,29 @@
 # Independent Review
 
-> **Current status:** Not yet performed
+<!-- public-claims: REV-001 -->
+
+> **Current status:** `NOT_PERFORMED`
+>
+> No external reviewer has been appointed, no independent conclusion has been
+> issued, and this repository makes no claim of certification.
+
+## Purpose
+
+The planned engagement is a scoped independent technical review of Release
+`v1.0.0`, selected supporting private evidence, and the later public record that
+documents the observed Release and DOI.
+
+The signed release commit and the later post-release publication-record commit
+are different objects. The reviewer must bind the technical conclusion to the
+commit reached by the signed `v1.0.0` tag and identify the later record only as
+post-release evidence. Release and archival identities are recorded in
+[`evidence/publication.json`](../evidence/publication.json); that file does not
+identify the later publication-record commit, which the reviewer must derive
+independently from Git history.
 
 ## Intended assurance level
 
-The planned review is an **Independent Technical Assurance Review** of a
-specific signed public release and selected supporting private evidence.
-
-It is not automatically:
+The review is not automatically:
 
 - an ISO certification;
 - a SOC examination;
@@ -25,7 +41,8 @@ The reviewer will assess whether:
 2. aggregate findings and dispositions are accurately represented;
 3. evidence qualifications and non-claims are preserved;
 4. the public repository avoids prohibited private detail;
-5. the signed release, digest manifest, and DOI identify the reviewed object;
+5. the signed release commit, signed annotated tag, Release, digest manifest,
+   and DOI identify the reviewed object;
    and
 6. the limitations are sufficient for a reasonable reader to understand the
    assurance boundary.
@@ -46,20 +63,38 @@ The public report must identify:
 
 - reviewer name, organization, role, and relevant qualifications;
 - conflict-of-interest declaration;
-- exact repository, commit, signed tag, release, and DOI;
+- exact repository, release commit, signed tag, tag object, Release, and
+  version DOI;
+- the later post-release publication-record commit as a separate object;
 - review dates and methods;
-- evidence sampled;
+- evidence inspected and independently selected samples;
 - findings and qualifications;
 - excluded scope;
 - conclusion; and
-- reviewer signature or independently verifiable digital approval.
+- reviewer-controlled signature or independently verifiable digital approval.
 
-The expected conclusion vocabulary is:
+The conclusion vocabulary is:
 
-- `CONFIRMED`;
-- `CONFIRMED WITH QUALIFICATIONS`; or
-- `NOT CONFIRMED`.
+- `CONFIRMED`: sufficient evidence was obtained and no unresolved material
+  inconsistency was identified within scope.
+- `CONFIRMED WITH QUALIFICATIONS`: the core conclusion is supportable, but
+  stated evidence or scope limitations materially narrow reliance.
+- `NOT CONFIRMED`: evidence was insufficient or an unresolved material
+  inconsistency was identified.
 
-Until that report exists, the repository will not describe itself as
-independently reviewed or certified.
+## Publication rule
 
+The reviewer controls the wording and conclusion of the final statement. The
+owner may publish an unmodified copy and a clearly separated owner response,
+but may not edit the reviewer's report.
+
+The public statement must have a stable URL and a reviewer-controlled signature
+or independently verifiable approval. Its SHA-256 digest must be published
+outside the report itself in a signed checksum, Git, release-manifest, detached
+signature, or equivalent verification record. If a confidential annex affects
+the conclusion, the public statement must disclose its existence and effect
+without exposing sensitive evidence.
+
+Only after that statement has been verified may a successor commit change the
+machine-readable status from `NOT_PERFORMED`. Release `v1.0.0` remains
+unchanged.

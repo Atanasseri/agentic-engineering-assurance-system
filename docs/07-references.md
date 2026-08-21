@@ -19,9 +19,8 @@ release. They do not imply endorsement, conformity, or certification.
 
 ## Standards context
 
-- [ISO/IEC 42001 — AI management systems](https://www.iso.org/standard/42001)
-- [ISO/IEC 27001 — information security management systems](https://www.iso.org/standard/27001)
+- [ISO/IEC 42001: AI management systems](https://www.iso.org/standard/42001)
+- [ISO/IEC 27001: information security management systems](https://www.iso.org/standard/27001)
 
 The system record does not claim conformity with either ISO standard. They are
 listed only as future organizational governance context.
-

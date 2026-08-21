@@ -9,11 +9,29 @@
   },
   "claims": [
     {
+      "id": "ARC-001",
+      "statement": "The later public publication record identifies 10.5281/zenodo.22019208 as the version DOI for Release v1.0.0 and 10.5281/zenodo.22019207 as the concept DOI.",
+      "evidence_class": "COMMITTED-RECORD",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "README.md",
+        "docs/03-assurance-method.md",
+        "docs/04-public-evidence-index.md",
+        "evidence/publication.json",
+        "review/REVIEW_BRIEF.md"
+      ],
+      "does_not_establish": [
+        "Certification, correctness, or independent technical review.",
+        "Byte identity between Zenodo's generated source archive and the attested GitHub release bundle."
+      ]
+    },
+    {
       "id": "AUD-001",
       "statement": "Seven audit reports were preserved across three governed reviews.",
       "evidence_class": "BASELINE-GIT-VERIFIED",
       "status": "SUPPORTED",
       "public_sources": [
+        "README.md",
         "docs/02-implementation-record.md",
         "docs/04-public-evidence-index.md"
       ],
@@ -58,6 +76,7 @@
       "evidence_class": "COMMITTED-RECORD",
       "status": "QUALIFIED",
       "public_sources": [
+        "README.md",
         "docs/02-implementation-record.md",
         "docs/04-public-evidence-index.md"
       ],
@@ -86,6 +105,8 @@
       "evidence_class": "LIMITATION",
       "status": "QUALIFIED",
       "public_sources": [
+        "README.md",
+        "docs/01-system-overview.md",
         "docs/05-limitations-and-reassessment.md"
       ],
       "does_not_establish": [
@@ -98,6 +119,7 @@
       "evidence_class": "DESIGN-CONTRACT",
       "status": "QUALIFIED",
       "public_sources": [
+        "README.md",
         "docs/01-system-overview.md",
         "docs/03-assurance-method.md",
         "docs/04-public-evidence-index.md"
@@ -113,6 +135,7 @@
       "evidence_class": "COMMITTED-RECORD",
       "status": "QUALIFIED",
       "public_sources": [
+        "README.md",
         "docs/03-assurance-method.md",
         "docs/04-public-evidence-index.md"
       ],
@@ -154,6 +177,8 @@
       "evidence_class": "DESIGN-CONTRACT",
       "status": "QUALIFIED",
       "public_sources": [
+        "PUBLICATION_GATE.md",
+        "README.md",
         "docs/01-system-overview.md",
         "docs/03-assurance-method.md",
         "docs/04-public-evidence-index.md"
@@ -174,6 +199,40 @@
       "does_not_establish": [
         "Independent reproduction of the private release.",
         "That the public technical record has itself been released."
+      ]
+    },
+    {
+      "id": "REL-003",
+      "statement": "The later public publication record records the signed release commit, signed annotated tag, immutable GitHub Release, SHA-256 release checksums, and GitHub artifact-attestation workflow for v1.0.0.",
+      "evidence_class": "COMMITTED-RECORD",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "README.md",
+        "docs/03-assurance-method.md",
+        "docs/04-public-evidence-index.md",
+        "evidence/publication.json",
+        "review/REVIEW_BRIEF.md"
+      ],
+      "does_not_establish": [
+        "Software correctness, defect-free operation, or independent technical review.",
+        "That the later default-branch publication record is part of the v1.0.0 Release or its signed Git objects."
+      ]
+    },
+    {
+      "id": "REV-001",
+      "statement": "The later public record states that independent technical review has not been performed and that no external certification is claimed.",
+      "evidence_class": "LIMITATION",
+      "status": "QUALIFIED",
+      "public_sources": [
+        "README.md",
+        "docs/03-assurance-method.md",
+        "docs/04-public-evidence-index.md",
+        "docs/06-independent-review.md",
+        "evidence/publication.json"
+      ],
+      "does_not_establish": [
+        "That the prepared review package constitutes a completed review.",
+        "Any predicted conclusion of a future independent reviewer."
       ]
     },
     {

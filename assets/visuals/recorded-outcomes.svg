@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1960" viewBox="0 0 960 1960" role="img" aria-labelledby="recorded-outcomes-title recorded-outcomes-desc">
+  <title id="recorded-outcomes-title">AEAS recorded assurance outcomes</title>
+  <desc id="recorded-outcomes-desc">A bounded summary of retained records: seven preserved reports across three governed reviews, six substantive audit rounds and one attempted round recorded as not auditable; all six substantive reports recorded changes-required verdicts; thirty-three findings split into eleven high and twenty-two medium with no critical finding recorded; thirty-two findings marked fixed and one settled through an owner-ratified criteria revision; three final-round findings recorded as defects introduced by earlier corrections; a final governed review with two owner-authorized rounds and eleven medium findings, six in the first round and five in the final round; and 1,111 tests reported green in each of the hermetic and explicit live-host tiers, shown as separate counts and never totaled. The revised criterion is not presented as originally met, and final-round corrections did not receive a third audit round within the same review.</desc>
+  <style>
+    text { font-family: "Segoe UI", Inter, Arial, sans-serif; fill: #101828; }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; letter-spacing: 1.4px; }
+    .eyebrow { font-size: 16px; font-weight: 600; fill: #5F6B7A; letter-spacing: 2px; }
+    .title { font-size: 34px; font-weight: 600; }
+    .subtitle { font-size: 20px; fill: #5F6B7A; }
+    .section-title { font-size: 23px; font-weight: 600; }
+    .metric { font-size: 60px; font-weight: 700; }
+    .metric-small { font-size: 46px; font-weight: 700; }
+    .metric-label { font-size: 20px; font-weight: 600; }
+    .copy { font-size: 18px; fill: #5F6B7A; }
+    .copy-strong { font-size: 18px; font-weight: 600; }
+    .pill { font-size: 15px; font-weight: 700; letter-spacing: 0.8px; }
+    .boundary { font-size: 18px; fill: #B42318; }
+    .card { fill: #FFFFFF; stroke: #D0D5DD; stroke-width: 1.5; }
+    .baseline { fill: #E7F8FB; stroke: #08798B; stroke-width: 1.5; }
+    .committed { fill: #EDF1FF; stroke: #3548B5; stroke-width: 1.5; }
+    .owner { fill: #FFF3D6; stroke: #9A5B00; stroke-width: 1.5; }
+  </style>
+
+  <rect width="960" height="1960" fill="#F6F8FB"/>
+  <text x="56" y="52" class="eyebrow mono">AEAS · BOUNDED PUBLIC RECORD</text>
+  <text x="56" y="99" class="title">Recorded assurance outcomes</text>
+  <text x="56" y="134" class="subtitle">What the retained records report, and no more.</text>
+
+  <rect x="56" y="170" width="848" height="290" rx="12" class="card"/>
+  <text x="84" y="207" class="section-title">Review record</text>
+  <rect x="652" y="186" width="224" height="32" rx="16" fill="#E7F8FB" stroke="#08798B"/>
+  <text x="764" y="207" text-anchor="middle" class="pill mono" style="fill:#08798B">BASELINE-GIT-VERIFIED</text>
+  <line x1="480" y1="236" x2="480" y2="374" stroke="#D0D5DD"/>
+  <text x="84" y="292" class="metric-small" style="fill:#08798B">7</text>
+  <text x="144" y="276" class="metric-label">preserved</text>
+  <text x="144" y="304" class="copy">reports</text>
+  <text x="84" y="367" class="metric-small" style="fill:#08798B">3</text>
+  <text x="144" y="351" class="metric-label">governed</text>
+  <text x="144" y="379" class="copy">reviews</text>
+  <text x="510" y="292" class="metric-small" style="fill:#08798B">6</text>
+  <text x="570" y="276" class="metric-label">substantive</text>
+  <text x="570" y="304" class="copy">audit rounds</text>
+  <text x="510" y="367" class="metric-small" style="fill:#B42318">1</text>
+  <text x="570" y="351" class="metric-label">attempted round</text>
+  <text x="570" y="379" class="copy">recorded not auditable</text>
+  <rect x="84" y="414" width="792" height="32" rx="8" fill="#E7F8FB"/>
+  <text x="480" y="436" text-anchor="middle" class="pill mono" style="fill:#08798B">6 OF 6 SUBSTANTIVE REPORTS · CHANGES REQUIRED</text>
+
+  <g transform="translate(0 60)">
+  <rect x="56" y="430" width="848" height="290" rx="12" class="baseline"/>
+  <text x="84" y="468" class="section-title">Findings in retained reports</text>
+  <rect x="652" y="446" width="224" height="32" rx="16" fill="#FFFFFF" stroke="#08798B"/>
+  <text x="764" y="467" text-anchor="middle" class="pill mono" style="fill:#08798B">BASELINE-GIT-VERIFIED</text>
+  <line x1="480" y1="500" x2="480" y2="687" stroke="#08798B" stroke-opacity="0.28"/>
+  <text x="84" y="588" class="metric" style="fill:#08798B">33</text>
+  <text x="84" y="622" class="metric-label">findings</text>
+  <text x="84" y="652" class="copy">across the retained reports</text>
+  <text x="520" y="548" class="metric-small" style="fill:#B42318">11</text>
+  <text x="595" y="548" class="metric-label">HIGH</text>
+  <text x="520" y="615" class="metric-small" style="fill:#9A5B00">22</text>
+  <text x="595" y="615" class="metric-label">MEDIUM</text>
+  <text x="520" y="674" class="copy-strong">No CRITICAL finding recorded</text>
+
+  <text x="56" y="767" class="eyebrow mono">RECORDED DISPOSITION</text>
+  <rect x="652" y="745" width="224" height="32" rx="16" fill="#EDF1FF" stroke="#3548B5"/>
+  <text x="764" y="766" text-anchor="middle" class="pill mono" style="fill:#3548B5">COMMITTED-RECORD</text>
+  <rect x="56" y="790" width="408" height="190" rx="12" class="committed"/>
+  <rect x="496" y="790" width="408" height="190" rx="12" class="owner"/>
+  <text x="84" y="876" class="metric" style="fill:#3548B5">32</text>
+  <text x="84" y="912" class="metric-label">marked fixed</text>
+  <text x="84" y="943" class="copy">in resolution records</text>
+  <text x="524" y="876" class="metric" style="fill:#9A5B00">1</text>
+  <text x="524" y="912" class="metric-label">owner-ratified</text>
+  <text x="524" y="943" class="copy">criteria revision</text>
+
+  <text x="56" y="1027" class="eyebrow mono">FINAL-REVIEW RECORD</text>
+  <rect x="652" y="1005" width="224" height="32" rx="16" fill="#EDF1FF" stroke="#3548B5"/>
+  <text x="764" y="1026" text-anchor="middle" class="pill mono" style="fill:#3548B5">COMMITTED-RECORD</text>
+  <rect x="56" y="1050" width="408" height="250" rx="12" class="card"/>
+  <rect x="496" y="1050" width="408" height="250" rx="12" class="card"/>
+  <text x="84" y="1090" class="section-title">Corrective-work finding</text>
+  <text x="84" y="1167" class="metric" style="fill:#B42318">3</text>
+  <text x="84" y="1205" class="metric-label">final-round findings</text>
+  <text x="84" y="1237" class="copy">recorded as defects introduced</text>
+  <text x="84" y="1265" class="copy">by earlier corrections</text>
+  <text x="524" y="1090" class="section-title">Final governed review</text>
+  <text x="524" y="1155" class="metric-small" style="fill:#3548B5">2</text>
+  <text x="584" y="1139" class="metric-label">owner-authorized</text>
+  <text x="584" y="1167" class="copy">rounds</text>
+  <text x="524" y="1221" class="metric-small">11</text>
+  <text x="594" y="1221" class="metric-label">MEDIUM</text>
+  <text x="524" y="1265" class="copy-strong">6 first · 5 final</text>
+
+  <rect x="56" y="1330" width="848" height="250" rx="12" class="committed"/>
+  <text x="84" y="1369" class="section-title">Tests reported green in each tier</text>
+  <rect x="652" y="1346" width="224" height="32" rx="16" fill="#FFFFFF" stroke="#3548B5"/>
+  <text x="764" y="1367" text-anchor="middle" class="pill mono" style="fill:#3548B5">COMMITTED-RECORD</text>
+  <line x1="480" y1="1400" x2="480" y2="1532" stroke="#3548B5" stroke-opacity="0.28"/>
+  <text x="84" y="1482" class="metric" style="fill:#3548B5">1,111</text>
+  <text x="84" y="1517" class="metric-label">hermetic tier</text>
+  <text x="510" y="1482" class="metric" style="fill:#3548B5">1,111</text>
+  <text x="510" y="1517" class="metric-label">explicit live-host tier</text>
+  <text x="480" y="1557" text-anchor="middle" class="copy-strong">Same reported count in each tier · not a combined total</text>
+
+  <rect x="56" y="1612" width="848" height="220" rx="12" fill="#FFF0EE" stroke="#B42318" stroke-width="1.25"/>
+  <text x="82" y="1644" class="eyebrow mono" style="fill:#B42318">ASSURANCE BOUNDARY</text>
+  <text x="82" y="1677" class="boundary">Retained records do not prove the absence of undiscovered defects,</text>
+  <text x="82" y="1705" class="boundary">equal impact across findings, independent replay of the final tests,</text>
+  <text x="82" y="1733" class="boundary">or external certification.</text>
+  <text x="82" y="1773" class="boundary">The revised criterion is not presented as originally met;</text>
+  <text x="82" y="1801" class="boundary">final-round corrections did not receive a third audit round within this review.</text>
+
+  <text x="56" y="1866" class="eyebrow mono">ATA NASSERI · SYSTEM DESIGNER AND ASSURANCE OWNER</text>
+  <text x="904" y="1866" text-anchor="end" class="eyebrow mono">RECORDED OUTCOMES</text>
+  </g>
+</svg>
