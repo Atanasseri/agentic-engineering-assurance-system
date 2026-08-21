@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Atanasseri/agentic-engineering-assurance-system/schemas/visual-manifest.schema.json",
+  "title": "Agentic Engineering Assurance Visual Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_id",
+    "record_scope",
+    "release_boundary",
+    "independent_review_status",
+    "visuals"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_scope": {
+      "const": "POST_RELEASE_DOCUMENTATION_REFINEMENT"
+    },
+    "release_boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "independent_review_status": {
+      "enum": [
+        "NOT_PERFORMED",
+        "IN_PROGRESS",
+        "COMPLETED"
+      ]
+    },
+    "visuals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "file",
+          "title",
+          "description",
+          "width",
+          "height",
+          "view_box",
+          "claim_ids",
+          "public_sources",
+          "does_not_establish",
+          "approval_status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "file": {
+            "type": "string",
+            "pattern": "^assets/visuals/[a-z0-9-]+\\.(svg|png)$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "view_box": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^0 0 [1-9][0-9]* [1-9][0-9]*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "claim_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}-[0-9]{3}$"
+            },
+            "uniqueItems": true
+          },
+          "public_sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "does_not_establish": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "approval_status": {
+            "enum": [
+              "DRAFT",
+              "OWNER_APPROVED",
+              "SUPERSEDED"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

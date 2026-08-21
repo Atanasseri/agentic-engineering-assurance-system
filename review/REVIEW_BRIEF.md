@@ -1,5 +1,7 @@
 # Independent Technical Review Brief
 
+<!-- public-claims: ARC-001 REL-003 -->
+
 ## Commissioning objective
 
 Assess whether the signed public release of the Agentic Engineering Assurance
@@ -14,7 +16,7 @@ supportable.
 | Commissioner | Ata Nasseri, Solofounders |
 | Target Release | `v1.0.0` |
 | Expected effort | To be agreed after conflict and evidence-access review |
-| Commercial basis | `[paid, pro bono, or other — disclose in final report]` |
+| Commercial basis | `[paid, pro bono, or other; disclose in final report]` |
 | Target dates | `[start]` to `[completion]` |
 | Contact | Arranged through direct professional outreach |
 

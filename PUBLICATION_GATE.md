@@ -1,5 +1,7 @@
 # Publication Gate
 
+<!-- public-claims: REL-001 -->
+
 > **Repository decision:** AUTHORIZED FOR PUBLIC REPOSITORY DEPLOYMENT
 >
 > **Release decision:** APPROVED FOR PUBLICATION OF `v1.0.0`

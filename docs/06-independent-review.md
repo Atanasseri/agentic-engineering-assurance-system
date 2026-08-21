@@ -1,5 +1,7 @@
 # Independent Review
 
+<!-- public-claims: REV-001 -->
+
 > **Current status:** `NOT_PERFORMED`
 >
 > No external reviewer has been appointed, no independent conclusion has been
@@ -39,7 +41,8 @@ The reviewer will assess whether:
 2. aggregate findings and dispositions are accurately represented;
 3. evidence qualifications and non-claims are preserved;
 4. the public repository avoids prohibited private detail;
-5. the signed release, digest manifest, and DOI identify the reviewed object;
+5. the signed release commit, signed annotated tag, Release, digest manifest,
+   and DOI identify the reviewed object;
    and
 6. the limitations are sufficient for a reasonable reader to understand the
    assurance boundary.

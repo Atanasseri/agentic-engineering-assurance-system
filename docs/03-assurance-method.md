@@ -1,6 +1,6 @@
 # Assurance Method
 
-<!-- public-claims: GOV-001 GOV-002 REL-001 -->
+<!-- public-claims: ARC-001 GOV-001 GOV-002 REL-001 REL-003 REV-001 -->
 
 ## Objective
 
@@ -23,17 +23,20 @@ the reviewed source. Approval does not itself merge or release anything.
 
 ## Evidence chain
 
-```mermaid
-flowchart TD
-    S["Authorized scope"] --> C["Exact source checkpoint"]
-    C --> H["Integrity-bound handoff"]
-    H --> F["Audit findings"]
-    F --> D["Disposition and decision"]
-    D --> R["Signed release identity"]
-```
+![AEAS evidence and release chain separating public claim discipline, the later public release record, and independent scrutiny](../assets/visuals/evidence-release-chain.svg)
 
-Each link establishes a different fact. The chain is credible only when those
-differences remain visible.
+[Open the full-size evidence-and-release visual](../assets/visuals/evidence-release-chain.svg).
+
+| Group | Sequence | Boundary preserved |
+| --- | --- | --- |
+| Public claim discipline | Precise claim and ID → evidence class and status → public source and explicit non-claims | An opaque private-baseline digest is a commitment, not public access or independent validation. |
+| Later public release record | Owner authorization → signed release commit and signed annotated tag → immutable GitHub Release, checksums, and artifact-attestation workflow → version DOI | Approval is not release; the later publication record does not alter the `v1.0.0` Release or its signed Git objects. |
+| Independent scrutiny | Qualified external reviewer → independently controlled conclusion | Current status is `NOT_PERFORMED`; no external conclusion or certification is claimed. |
+
+These groups establish different kinds of facts and must not be collapsed into
+one unbroken proof chain. Integrity, provenance, and persistence strengthen
+object identity; they do not establish software correctness. A DOI does not
+establish certification or byte identity between distinct archives.
 
 ## Public evidence classes
 
@@ -99,8 +102,8 @@ The public system record adds a separate assurance layer:
 2. allow-list derivation;
 3. prohibited-content scan;
 4. machine-readable claims;
-5. signed commit and annotated tag;
-6. immutable GitHub release;
+5. signed release commit and signed annotated tag;
+6. immutable GitHub Release;
 7. SHA-256 release manifest;
 8. GitHub artifact attestation;
 9. DOI-backed archival; and

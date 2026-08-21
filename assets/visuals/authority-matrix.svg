@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="2380" viewBox="0 0 960 2380" role="img" aria-labelledby="authority-matrix-title authority-matrix-desc">
+  <title id="authority-matrix-title">AEAS authority and control matrix</title>
+  <desc id="authority-matrix-desc">Seven action rows distinguish the Assurance Owner, implementation role, read-only audit role, and durable control output. The owner decides objectives, criteria, continuation, risk, completion, and release authorization. Implementation performs bounded work. Audit reports findings without changing source or substituting owner authority. Durable records and automation preserve status but cannot approve. Operational separation is not institutional independence.</desc>
+  <style>
+    text { font-family: "Segoe UI", Inter, Arial, sans-serif; fill: #101828; }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; letter-spacing: 1.35px; }
+    .eyebrow { font-size: 16px; font-weight: 600; fill: #5F6B7A; letter-spacing: 2px; }
+    .title { font-size: 34px; font-weight: 600; }
+    .subtitle { font-size: 20px; fill: #5F6B7A; }
+    .action-step { font-size: 15px; font-weight: 600; fill: #5F6B7A; }
+    .action-title { font-size: 23px; font-weight: 600; }
+    .role { font-size: 15px; font-weight: 600; letter-spacing: 0.8px; }
+    .value { font-size: 16px; font-weight: 600; }
+    .legend { font-size: 15px; font-weight: 600; }
+    .boundary-title { font-size: 15px; font-weight: 600; fill: #B42318; letter-spacing: 1.2px; }
+    .boundary { font-size: 18px; fill: #B42318; }
+    .footer { font-size: 15px; font-weight: 600; fill: #5F6B7A; letter-spacing: 1px; }
+    .action { fill: #FFFFFF; stroke: #D0D5DD; stroke-width: 1.5; }
+    .owner-cell { fill: #FFF3D6; stroke: #9A5B00; stroke-width: 1.5; }
+    .implementation-cell { fill: #EEF1F5; stroke: #475467; stroke-width: 1.5; }
+    .audit-cell { fill: #E7F8FB; stroke: #08798B; stroke-width: 1.5; }
+    .record-cell { fill: #EAF1F8; stroke: #264B6B; stroke-width: 1.5; }
+    .release-cell { fill: #EDF1FF; stroke: #3548B5; stroke-width: 1.5; }
+    .owner-ink { fill: #9A5B00; }
+    .implementation-ink { fill: #475467; }
+    .audit-ink { fill: #08798B; }
+    .record-ink { fill: #264B6B; }
+    .release-ink { fill: #3548B5; }
+    .no-authority { fill: #B42318; }
+  </style>
+
+  <rect width="960" height="2380" fill="#F6F8FB"/>
+
+  <text x="56" y="52" class="eyebrow mono">AEAS · AUTHORITY BOUNDARIES</text>
+  <text x="56" y="99" class="title">Authority and control matrix</text>
+  <text x="56" y="134" class="subtitle">Roles cooperate, but their authority is not interchangeable.</text>
+  <text x="56" y="164" class="subtitle">Durable controls record or report; they do not make human decisions.</text>
+
+  <g aria-label="Role legend">
+    <rect x="56" y="202" width="198" height="64" rx="12" class="owner-cell"/>
+    <text x="76" y="241" class="legend owner-ink">OWNER · DECIDES</text>
+    <rect x="272" y="202" width="198" height="64" rx="12" class="implementation-cell"/>
+    <text x="371" y="241" text-anchor="middle" class="legend implementation-ink">IMPLEMENTATION</text>
+    <rect x="488" y="202" width="198" height="64" rx="12" class="audit-cell"/>
+    <text x="508" y="241" class="legend audit-ink">AUDIT · REPORTS</text>
+    <rect x="704" y="202" width="200" height="64" rx="12" class="record-cell"/>
+    <text x="724" y="241" class="legend record-ink">CONTROL · RECORDS</text>
+  </g>
+
+  <g aria-label="Objectives, constraints, and acceptance criteria">
+    <rect x="56" y="312" width="848" height="244" rx="12" class="action"/>
+    <text x="80" y="342" class="action-step mono">01 · SCOPE</text>
+    <text x="80" y="375" class="action-title">Objectives, constraints, and acceptance criteria</text>
+    <rect x="80" y="394" width="392" height="68" rx="10" class="owner-cell"/>
+    <text x="96" y="418" class="role owner-ink mono">ASSURANCE OWNER</text>
+    <text x="96" y="446" class="value owner-ink">DECIDES</text>
+    <rect x="488" y="394" width="392" height="68" rx="10" class="implementation-cell"/>
+    <text x="504" y="418" class="role implementation-ink mono">IMPLEMENTATION ROLE</text>
+    <text x="504" y="446" class="value">WORKS WITHIN DECLARED BOUNDARY</text>
+    <rect x="80" y="474" width="392" height="68" rx="10" class="audit-cell"/>
+    <text x="96" y="498" class="role audit-ink mono">READ-ONLY AUDIT</text>
+    <text x="96" y="526" class="value">ASSESSES AGAINST CRITERIA</text>
+    <rect x="488" y="474" width="392" height="68" rx="10" class="record-cell"/>
+    <text x="504" y="498" class="role record-ink mono">DURABLE OUTPUT</text>
+    <text x="504" y="526" class="value record-ink">WORK PACKAGE RECORD</text>
+  </g>
+
+  <g aria-label="Source, tests, handoff, and remediation">
+    <rect x="56" y="576" width="848" height="244" rx="12" class="action"/>
+    <text x="80" y="606" class="action-step mono">02 · IMPLEMENTATION</text>
+    <text x="80" y="639" class="action-title">Source, tests, handoff, and remediation</text>
+    <rect x="80" y="658" width="392" height="68" rx="10" class="owner-cell"/>
+    <text x="96" y="682" class="role owner-ink mono">ASSURANCE OWNER</text>
+    <text x="96" y="710" class="value owner-ink">DEFINES WORK BOUNDARY</text>
+    <rect x="488" y="658" width="392" height="68" rx="10" class="implementation-cell"/>
+    <text x="504" y="682" class="role implementation-ink mono">IMPLEMENTATION ROLE</text>
+    <text x="504" y="710" class="value">PERFORMS</text>
+    <rect x="80" y="738" width="392" height="68" rx="10" class="audit-cell"/>
+    <text x="96" y="762" class="role audit-ink mono">READ-ONLY AUDIT</text>
+    <text x="96" y="790" class="value no-authority">NO SOURCE MODIFICATION</text>
+    <rect x="488" y="738" width="392" height="68" rx="10" class="record-cell"/>
+    <text x="504" y="762" class="role record-ink mono">DURABLE OUTPUT</text>
+    <text x="504" y="790" class="value record-ink">EXACT-SOURCE + HANDOFF RECORD</text>
+  </g>
+
+  <g aria-label="Authorized audit round">
+    <rect x="56" y="840" width="848" height="244" rx="12" class="action"/>
+    <text x="80" y="870" class="action-step mono">03 · AUDIT ROUND</text>
+    <text x="80" y="903" class="action-title">Authorized inspection of a pinned source position</text>
+    <rect x="80" y="922" width="392" height="68" rx="10" class="owner-cell"/>
+    <text x="96" y="946" class="role owner-ink mono">ASSURANCE OWNER</text>
+    <text x="96" y="974" class="value owner-ink">AUTHORIZES BOUNDED ROUND</text>
+    <rect x="488" y="922" width="392" height="68" rx="10" class="implementation-cell"/>
+    <text x="504" y="946" class="role implementation-ink mono">IMPLEMENTATION ROLE</text>
+    <text x="504" y="974" class="value">PINNED HANDOFF + REMEDIATION</text>
+    <rect x="80" y="1002" width="392" height="68" rx="10" class="audit-cell"/>
+    <text x="96" y="1026" class="role audit-ink mono">READ-ONLY AUDIT</text>
+    <text x="96" y="1054" class="value audit-ink">REPORTS ONLY · FINDINGS + SEVERITY</text>
+    <rect x="488" y="1002" width="392" height="68" rx="10" class="record-cell"/>
+    <text x="504" y="1026" class="role record-ink mono">DURABLE OUTPUT</text>
+    <text x="504" y="1054" class="value record-ink">AUDIT RECORD</text>
+  </g>
+
+  <g aria-label="Finding disposition">
+    <rect x="56" y="1104" width="848" height="244" rx="12" class="action"/>
+    <text x="80" y="1134" class="action-step mono">04 · FINDING DISPOSITION</text>
+    <text x="80" y="1167" class="action-title">Correction, criteria, continuation, and residual risk</text>
+    <rect x="80" y="1186" width="392" height="68" rx="10" class="owner-cell"/>
+    <text x="96" y="1210" class="role owner-ink mono">ASSURANCE OWNER</text>
+    <text x="96" y="1238" class="value owner-ink">DECIDES CRITERIA, CONTINUATION, RISK</text>
+    <rect x="488" y="1186" width="392" height="68" rx="10" class="implementation-cell"/>
+    <text x="504" y="1210" class="role implementation-ink mono">IMPLEMENTATION ROLE</text>
+    <text x="504" y="1238" class="value">CORRECTS WITHIN AUTHORIZED SCOPE</text>
+    <rect x="80" y="1266" width="392" height="68" rx="10" class="audit-cell"/>
+    <text x="96" y="1290" class="role audit-ink mono">READ-ONLY AUDIT</text>
+    <text x="96" y="1318" class="value no-authority">CANNOT REPLACE OWNER AUTHORITY</text>
+    <rect x="488" y="1266" width="392" height="68" rx="10" class="record-cell"/>
+    <text x="504" y="1290" class="role record-ink mono">DURABLE OUTPUT</text>
+    <text x="504" y="1318" class="value record-ink">RESOLUTION RECORD</text>
+  </g>
+
+  <g aria-label="Completion approval">
+    <rect x="56" y="1368" width="848" height="244" rx="12" class="action"/>
+    <text x="80" y="1398" class="action-step mono">05 · COMPLETION APPROVAL</text>
+    <text x="80" y="1431" class="action-title">Terminal approval is a separate owner decision</text>
+    <rect x="80" y="1450" width="392" height="68" rx="10" class="owner-cell"/>
+    <text x="96" y="1474" class="role owner-ink mono">ASSURANCE OWNER</text>
+    <text x="96" y="1502" class="value owner-ink">DECIDES SEPARATELY</text>
+    <rect x="488" y="1450" width="392" height="68" rx="10" class="implementation-cell"/>
+    <text x="504" y="1474" class="role implementation-ink mono">IMPLEMENTATION ROLE</text>
+    <text x="504" y="1502" class="value no-authority">CANNOT ISSUE APPROVAL</text>
+    <rect x="80" y="1530" width="392" height="68" rx="10" class="audit-cell"/>
+    <text x="96" y="1554" class="role audit-ink mono">READ-ONLY AUDIT</text>
+    <text x="96" y="1582" class="value no-authority">CANNOT ISSUE APPROVAL</text>
+    <rect x="488" y="1530" width="392" height="68" rx="10" class="record-cell"/>
+    <text x="504" y="1554" class="role record-ink mono">DURABLE OUTPUT</text>
+    <text x="504" y="1582" class="value record-ink">TERMINAL APPROVAL RECORD</text>
+  </g>
+
+  <g aria-label="Release authorization">
+    <rect x="56" y="1632" width="848" height="244" rx="12" class="action"/>
+    <text x="80" y="1662" class="action-step mono">06 · RELEASE AUTHORIZATION</text>
+    <text x="80" y="1695" class="action-title">Approval does not itself merge, tag, publish, or release</text>
+    <rect x="80" y="1714" width="392" height="68" rx="10" class="owner-cell"/>
+    <text x="96" y="1738" class="role owner-ink mono">ASSURANCE OWNER</text>
+    <text x="96" y="1766" class="value owner-ink">DECIDES SEPARATELY</text>
+    <rect x="488" y="1714" width="392" height="68" rx="10" class="implementation-cell"/>
+    <text x="504" y="1738" class="role implementation-ink mono">IMPLEMENTATION ROLE</text>
+    <text x="504" y="1766" class="value no-authority">CANNOT ISSUE RELEASE AUTHORITY</text>
+    <rect x="80" y="1794" width="392" height="68" rx="10" class="audit-cell"/>
+    <text x="96" y="1818" class="role audit-ink mono">READ-ONLY AUDIT</text>
+    <text x="96" y="1846" class="value no-authority">CANNOT ISSUE RELEASE AUTHORITY</text>
+    <rect x="488" y="1794" width="392" height="68" rx="10" class="release-cell"/>
+    <text x="504" y="1818" class="role release-ink mono">SEPARATE RELEASE CONTROL</text>
+    <text x="504" y="1846" class="value release-ink">MERGE / TAG / RELEASE IDENTITY</text>
+  </g>
+
+  <g aria-label="Automation status">
+    <rect x="56" y="1896" width="848" height="244" rx="12" class="action"/>
+    <text x="80" y="1926" class="action-step mono">07 · AUTOMATION STATUS</text>
+    <text x="80" y="1959" class="action-title">Automation reports status; it grants no authority</text>
+    <rect x="80" y="1978" width="392" height="68" rx="10" class="owner-cell"/>
+    <text x="96" y="2002" class="role owner-ink mono">ASSURANCE OWNER</text>
+    <text x="96" y="2030" class="value owner-ink">RETAINS OWNER APPROVAL AUTHORITY</text>
+    <rect x="488" y="1978" width="392" height="68" rx="10" class="implementation-cell"/>
+    <text x="504" y="2002" class="role implementation-ink mono">IMPLEMENTATION ROLE</text>
+    <text x="504" y="2030" class="value">CANNOT ISSUE OWNER APPROVAL</text>
+    <rect x="80" y="2058" width="392" height="68" rx="10" class="audit-cell"/>
+    <text x="96" y="2082" class="role audit-ink mono">READ-ONLY AUDIT</text>
+    <text x="96" y="2110" class="value">CANNOT ISSUE OWNER APPROVAL</text>
+    <rect x="488" y="2058" width="392" height="68" rx="10" class="record-cell"/>
+    <text x="504" y="2082" class="role record-ink mono">AUTOMATION</text>
+    <text x="504" y="2110" class="value no-authority">REPORTS · NO OWNER AUTHORITY</text>
+  </g>
+
+  <rect x="56" y="2172" width="848" height="114" rx="12" fill="#FFF0EE" stroke="#B42318" stroke-width="1.5"/>
+  <text x="80" y="2204" class="boundary-title mono">ASSURANCE BOUNDARY</text>
+  <text x="80" y="2236" class="boundary">Operational separation is not institutional independence.</text>
+  <text x="80" y="2264" class="boundary">Read-only audit, durable records, and automation cannot independently certify or approve.</text>
+
+  <text x="56" y="2338" class="footer mono">AEAS · AUTHORITY MATRIX</text>
+  <text x="904" y="2338" text-anchor="end" class="footer">Ata Nasseri · System Designer and Assurance Owner</text>
+</svg>

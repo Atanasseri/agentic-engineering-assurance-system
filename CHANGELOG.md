@@ -7,6 +7,10 @@ append-only; corrections create a successor release.
 
 - Improved the public record's short-form orientation and claim traceability.
 - Added a repository social-preview asset with Ata Nasseri's accountable role.
+- Added the AEAS visual system, four claim-bounded explanatory diagrams,
+  audience-specific reading paths, and text fallbacks.
+- Added machine-readable visual metadata plus SVG, PNG, accessibility, source,
+  claim, non-claim, and Markdown-image verification.
 - Strengthened the independent technical review scope, object identity,
   evidence-handling requirements, and statement template.
 - Extended CI verification to documentation branches.
@@ -17,4 +21,3 @@ append-only; corrections create a successor release.
 - Prepared the initial public technical system record.
 - Added the publication boundary, evidence index, assurance method, release
   controls, DOI guidance, and independent-review package.
-

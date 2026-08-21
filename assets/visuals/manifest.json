@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "AEAS-VISUAL-MANIFEST-POST-RELEASE-001",
+  "record_scope": "POST_RELEASE_DOCUMENTATION_REFINEMENT",
+  "release_boundary": "This manifest and the registered visuals are later default-branch documentation refinements; they do not alter the v1.0.0 Release, its signed release commit and signed annotated tag, assets, checksums, provenance, or DOI archive.",
+  "independent_review_status": "NOT_PERFORMED",
+  "visuals": [
+    {
+      "id": "authority-matrix",
+      "file": "assets/visuals/authority-matrix.svg",
+      "title": "AEAS authority and control matrix",
+      "description": "Seven action rows distinguish the Assurance Owner, implementation role, read-only audit role, and durable control output. The owner decides objectives, criteria, continuation, risk, completion, and release authorization. Implementation performs bounded work. Audit reports findings without changing source or substituting owner authority. Durable records and automation preserve status but cannot approve. Operational separation is not institutional independence.",
+      "width": 960,
+      "height": 2380,
+      "view_box": "0 0 960 2380",
+      "claim_ids": [
+        "BND-001",
+        "GOV-001",
+        "REL-001",
+        "SYS-001"
+      ],
+      "public_sources": [
+        "PUBLICATION_GATE.md",
+        "README.md",
+        "docs/01-system-overview.md",
+        "docs/03-assurance-method.md"
+      ],
+      "does_not_establish": [
+        "External institutional independence or certification.",
+        "That records or automation possess human decision authority."
+      ],
+      "approval_status": "OWNER_APPROVED"
+    },
+    {
+      "id": "evidence-release-chain",
+      "file": "assets/visuals/evidence-release-chain.svg",
+      "title": "AEAS evidence and release boundaries",
+      "description": "Three visibly separate groups explain AEAS claim discipline, the later public release record, and the current independent-review status. Public claims are tied to evidence classes, sources, and explicit non-claims. The later record documents owner authorization, the signed release commit and signed annotated tag, an immutable GitHub Release with checksums and an artifact-attestation workflow, and a version DOI. Independent review remains not performed. The diagram states that integrity, provenance, and persistence are not correctness; a DOI is not certification or proof of byte equality; and the later publication record is distinct from the v1.0.0 Release and its signed Git objects.",
+      "width": 960,
+      "height": 1540,
+      "view_box": "0 0 960 1540",
+      "claim_ids": [
+        "ARC-001",
+        "BND-001",
+        "GOV-001",
+        "REL-001",
+        "REL-003",
+        "REV-001"
+      ],
+      "public_sources": [
+        "README.md",
+        "docs/03-assurance-method.md",
+        "docs/04-public-evidence-index.md",
+        "docs/06-independent-review.md",
+        "evidence/publication.json",
+        "review/REVIEW_BRIEF.md"
+      ],
+      "does_not_establish": [
+        "Software correctness, defect-free operation, completed independent review, or certification.",
+        "Byte identity between distinct archives or public access to the sealed private baseline."
+      ],
+      "approval_status": "OWNER_APPROVED"
+    },
+    {
+      "id": "recorded-outcomes",
+      "file": "assets/visuals/recorded-outcomes.svg",
+      "title": "AEAS recorded assurance outcomes",
+      "description": "A bounded summary of retained records: seven preserved reports across three governed reviews, six substantive audit rounds and one attempted round recorded as not auditable; all six substantive reports recorded changes-required verdicts; thirty-three findings split into eleven high and twenty-two medium with no critical finding recorded; thirty-two findings marked fixed and one settled through an owner-ratified criteria revision; three final-round findings recorded as defects introduced by earlier corrections; a final governed review with two owner-authorized rounds and eleven medium findings, six in the first round and five in the final round; and 1,111 tests reported green in each of the hermetic and explicit live-host tiers, shown as separate counts and never totaled. The revised criterion is not presented as originally met, and final-round corrections did not receive a third audit round within the same review.",
+      "width": 960,
+      "height": 1960,
+      "view_box": "0 0 960 1960",
+      "claim_ids": [
+        "AUD-001",
+        "AUD-002",
+        "AUD-003",
+        "AUD-004",
+        "AUD-005",
+        "GOV-002",
+        "TST-001"
+      ],
+      "public_sources": [
+        "README.md",
+        "docs/02-implementation-record.md",
+        "docs/03-assurance-method.md",
+        "docs/04-public-evidence-index.md"
+      ],
+      "does_not_establish": [
+        "The absence of undiscovered defects or equal operational impact across findings.",
+        "Independent replay of the reported tests or external certification.",
+        "That the revised criterion was originally met.",
+        "That final-round corrections received a third audit round within the same review."
+      ],
+      "approval_status": "OWNER_APPROVED"
+    },
+    {
+      "id": "social-preview",
+      "file": "assets/visuals/social-preview.png",
+      "title": "Agentic Engineering Assurance System social preview",
+      "description": "Repository social preview identifying Agentic Engineering Assurance System, its governance, auditability, and release-integrity focus, and Ata Nasseri as System Designer and Assurance Owner.",
+      "width": 1280,
+      "height": 640,
+      "view_box": null,
+      "claim_ids": [
+        "SYS-001"
+      ],
+      "public_sources": [
+        "README.md"
+      ],
+      "does_not_establish": [
+        "Runtime topology, independent review, external certification, or software correctness."
+      ],
+      "approval_status": "OWNER_APPROVED"
+    },
+    {
+      "id": "system-map",
+      "file": "assets/visuals/system-map.svg",
+      "title": "AEAS governed work-to-release system map",
+      "description": "A conceptual control model. A bounded work package moves through implementation, an exact source checkpoint and handoff, read-only technical audit, finding disposition, an owner decision, terminal approval, and a separate release action. Human authority is shown above the process and durable records are shown separately below it.",
+      "width": 960,
+      "height": 1500,
+      "view_box": "0 0 960 1500",
+      "claim_ids": [
+        "BND-001",
+        "GOV-001",
+        "REL-001",
+        "SYS-001"
+      ],
+      "public_sources": [
+        "README.md",
+        "docs/01-system-overview.md",
+        "docs/03-assurance-method.md"
+      ],
+      "does_not_establish": [
+        "Private operating topology, external institutional independence, or certification.",
+        "That terminal approval itself performs merge, tag, publication, deployment, or release."
+      ],
+      "approval_status": "OWNER_APPROVED"
+    }
+  ]
+}

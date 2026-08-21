@@ -1,6 +1,6 @@
 # Public Evidence Index
 
-<!-- public-claims: AUD-001 AUD-002 AUD-003 AUD-004 AUD-005 BND-001 GOV-001 GOV-002 OPS-001 OPS-002 REL-001 REL-002 SYS-001 SYS-002 TST-001 -->
+<!-- public-claims: ARC-001 AUD-001 AUD-002 AUD-003 AUD-004 AUD-005 BND-001 GOV-001 GOV-002 OPS-001 OPS-002 REL-001 REL-002 REL-003 REV-001 SYS-001 SYS-002 TST-001 -->
 
 ## Purpose
 
@@ -36,6 +36,9 @@ private manifest or prove its substantive accuracy.
 | `OPS-002` | The owner separately confirmed the final application-visible state. | `OWNER-CONFIRMED` | Human observation is not cryptographic remote attestation. |
 | `REL-001` | Approval and release were modeled as separate controlled actions. | `DESIGN-CONTRACT` | Approval alone does not prove that a release occurred. |
 | `REL-002` | The completion record reports a versioned correctness release. | `COMMITTED-RECORD` | The public repository does not independently reproduce the private release. |
+| `REL-003` | The later publication record records the signed release commit, signed annotated tag, immutable GitHub Release, checksums, and artifact-attestation workflow for `v1.0.0`. | `COMMITTED-RECORD` | These controls establish identity, integrity, and provenance, not software correctness or independent review. |
+| `ARC-001` | The later publication record identifies the version and concept DOI for this public record. | `COMMITTED-RECORD` | DOI persistence is not certification or proof that distinct archives are byte-identical. |
+| `REV-001` | Independent technical review has not been performed and no external certification is claimed. | `LIMITATION` | A prepared review package is not a completed review or a predicted reviewer conclusion. |
 | `BND-001` | The implemented assurance has explicit isolation, liveness, evidence, and review limits. | `LIMITATION` | The system is not presented as fully isolated, formally verified, or defect-free. |
 | `SYS-002` | The completion record reports the capability categories summarized here. | `COMMITTED-RECORD` | The summary is not a public reconstruction of the private implementation. |
 

@@ -1,6 +1,6 @@
 # System Overview
 
-<!-- public-claims: GOV-001 REL-001 SYS-001 -->
+<!-- public-claims: BND-001 GOV-001 REL-001 SYS-001 -->
 
 ## Purpose
 
@@ -49,13 +49,19 @@ approve completion, or authorize release.
 
 ## Authority boundaries
 
-```mermaid
-flowchart LR
-    O["Owner"] -->|defines and decides| C["Control boundary"]
-    I["Implementation"] -->|changes source| C
-    A["Audit"] -->|reports only| C
-    C -->|records| G["Git evidence"]
-```
+![AEAS authority matrix showing decision rights, implementation duties, read-only audit limits, and the durable record for seven governed actions](../assets/visuals/authority-matrix.svg)
+
+[Open the full-size authority matrix](../assets/visuals/authority-matrix.svg).
+
+| Governed action | Assurance owner | Implementation role | Read-only audit role | Durable output or control |
+| --- | --- | --- | --- | --- |
+| Objectives, constraints, and criteria | **Decides** | Works within the boundary | Assesses against the boundary | Bounded work package |
+| Source, tests, handoff, and remediation | Defines the boundary | **Performs** the change | **No source modification** | Exact-source checkpoint and handoff |
+| Audit round | **Authorizes** the round | Supplies pinned handoff and remediation | **Reports only** findings and severity | Audit record tied to exact source |
+| Finding disposition | **Decides** criteria, continuation, and risk | Corrects or records response | Cannot substitute for owner authority | Resolution and decision record |
+| Completion approval | **Decides separately** | Cannot issue owner approval | Cannot issue owner approval | Terminal approval record |
+| Release authorization | **Decides separately** | Cannot issue release authority | Cannot issue release authority | Separate merge, tag, and release identity |
+| Automation status | Retains owner approval authority | Cannot issue owner approval | Cannot issue owner approval | Automation **reports status and cannot issue owner authority** |
 
 Operational separation is not the same as institutional independence. The
 audit role is technically separated and read-only inside the designed

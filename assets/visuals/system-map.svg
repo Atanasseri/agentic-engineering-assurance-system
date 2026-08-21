@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1500" viewBox="0 0 960 1500" role="img" aria-labelledby="system-map-title system-map-desc">
+  <title id="system-map-title">AEAS governed work-to-release system map</title>
+  <desc id="system-map-desc">A conceptual control model. A bounded work package moves through implementation, an exact source checkpoint and handoff, read-only technical audit, finding disposition, an owner decision, terminal approval, and a separate release action. Human authority is shown above the process and durable records are shown separately below it.</desc>
+  <defs>
+    <marker id="system-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0 0L10 5L0 10Z" fill="#475467"/></marker>
+  </defs>
+  <style>
+    text { font-family: "Segoe UI", Inter, Arial, sans-serif; fill: #101828; }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; letter-spacing: 1.4px; }
+    .eyebrow { font-size: 16px; font-weight: 600; fill: #5F6B7A; letter-spacing: 2px; }
+    .title { font-size: 34px; font-weight: 600; }
+    .subtitle { font-size: 20px; fill: #5F6B7A; }
+    .band-title { font-size: 26px; font-weight: 600; }
+    .band-copy { font-size: 19px; fill: #5F6B7A; }
+    .step { font-size: 17px; font-weight: 600; fill: #5F6B7A; }
+    .node-title { font-size: 23px; font-weight: 600; }
+    .node-copy { font-size: 18px; fill: #5F6B7A; }
+    .record-title { font-size: 21px; font-weight: 600; }
+    .record-copy { font-size: 18px; fill: #5F6B7A; }
+    .boundary { font-size: 18px; fill: #B42318; }
+    .node { fill: #FFFFFF; stroke: #D0D5DD; stroke-width: 1.5; }
+    .neutral { fill: #EEF1F5; }
+    .owner { fill: #FFF3D6; stroke: #9A5B00; }
+    .audit { fill: #E7F8FB; stroke: #08798B; }
+    .release { fill: #EDF1FF; stroke: #3548B5; }
+    .flow { fill: none; stroke: #475467; stroke-width: 2.5; marker-end: url(#system-arrow); }
+  </style>
+
+  <rect width="960" height="1500" fill="#F6F8FB"/>
+  <text x="56" y="52" class="eyebrow mono">AEAS · CONCEPTUAL CONTROL MODEL</text>
+  <text x="56" y="99" class="title">Governed work-to-release lifecycle</text>
+  <text x="56" y="134" class="subtitle">Authority, execution, audit, evidence, and release remain distinct.</text>
+
+  <rect x="56" y="170" width="848" height="128" rx="12" fill="#FFF3D6" stroke="#9A5B00" stroke-width="1.5"/>
+  <text x="84" y="211" class="band-title">Assurance owner</text>
+  <text x="84" y="244" class="band-copy">Defines scope and criteria · authorizes bounded audit rounds · decides criteria</text>
+  <text x="84" y="274" class="band-copy">changes, continuation, residual risk, completion, and release authorization</text>
+  <text x="870" y="213" text-anchor="end" class="eyebrow mono" style="fill:#9A5B00">HUMAN AUTHORITY</text>
+
+  <path d="M456 405H504" class="flow"/>
+  <path d="M704 476V500H256V526" class="flow"/>
+  <path d="M456 597H504" class="flow"/>
+  <path d="M704 668V692H256V718" class="flow"/>
+  <path d="M456 789H504" class="flow"/>
+  <path d="M704 860V884H256V910" class="flow"/>
+  <path d="M456 981H504" class="flow"/>
+
+  <g>
+    <rect x="56" y="334" width="400" height="142" rx="12" class="node owner"/>
+    <text x="82" y="366" class="step mono" style="fill:#9A5B00">01 · SCOPE</text>
+    <text x="82" y="403" class="node-title">Bounded work package</text>
+    <text x="82" y="432" class="node-copy">Objectives, constraints, and</text>
+    <text x="82" y="458" class="node-copy">acceptance criteria</text>
+  </g>
+  <g>
+    <rect x="504" y="334" width="400" height="142" rx="12" class="node neutral"/>
+    <text x="530" y="366" class="step mono">02 · BUILD</text>
+    <text x="530" y="403" class="node-title">Implementation role</text>
+    <text x="530" y="432" class="node-copy">Source, tests, handoff preparation,</text>
+    <text x="530" y="458" class="node-copy">and remediation</text>
+  </g>
+  <g>
+    <rect x="56" y="526" width="400" height="142" rx="12" class="node"/>
+    <text x="82" y="558" class="step mono">03 · PIN</text>
+    <text x="82" y="595" class="node-title">Exact source checkpoint</text>
+    <text x="82" y="621" class="node-title">and integrity-bound handoff</text>
+    <text x="82" y="650" class="node-copy">A stable, reviewable source identity</text>
+  </g>
+  <g>
+    <rect x="504" y="526" width="400" height="142" rx="12" class="node audit"/>
+    <text x="530" y="558" class="step mono" style="fill:#08798B">04 · INSPECT</text>
+    <text x="530" y="595" class="node-title">Read-only technical audit</text>
+    <text x="530" y="624" class="node-copy">Reports findings and severity;</text>
+    <text x="530" y="650" class="node-copy">does not change reviewed source</text>
+  </g>
+  <g>
+    <rect x="56" y="718" width="400" height="142" rx="12" class="node"/>
+    <text x="82" y="750" class="step mono">05 · DISPOSE</text>
+    <text x="82" y="787" class="node-title">Finding disposition</text>
+    <text x="82" y="816" class="node-copy">Correction, criteria revision,</text>
+    <text x="82" y="842" class="node-copy">or explicit qualification</text>
+  </g>
+  <g>
+    <rect x="504" y="718" width="400" height="142" rx="12" class="node owner"/>
+    <text x="530" y="750" class="step mono" style="fill:#9A5B00">06 · DECIDE</text>
+    <text x="530" y="787" class="node-title">Explicit owner decision</text>
+    <text x="530" y="816" class="node-copy">Criteria, continuation, and residual</text>
+    <text x="530" y="842" class="node-copy">risk remain human decisions</text>
+  </g>
+  <g>
+    <rect x="56" y="910" width="400" height="142" rx="12" class="node owner"/>
+    <text x="82" y="942" class="step mono" style="fill:#9A5B00">07 · APPROVE</text>
+    <text x="82" y="979" class="node-title">Terminal approval</text>
+    <text x="82" y="1008" class="node-copy">A distinct recorded decision,</text>
+    <text x="82" y="1034" class="node-copy">not a release action</text>
+  </g>
+  <g>
+    <rect x="504" y="910" width="400" height="142" rx="12" class="node release"/>
+    <text x="530" y="942" class="step mono" style="fill:#3548B5">08 · RELEASE</text>
+    <text x="530" y="979" class="node-title">Separate release action</text>
+    <text x="530" y="1008" class="node-copy">Merge, tag, publish, and verify</text>
+    <text x="530" y="1034" class="node-copy">release identity</text>
+  </g>
+
+  <text x="56" y="1100" class="eyebrow mono" style="fill:#264B6B">DURABLE RECORDS · NOT DECISION AUTHORITY</text>
+  <rect x="56" y="1120" width="848" height="200" rx="12" fill="#EAF1F8" stroke="#264B6B" stroke-width="1.5"/>
+  <line x1="480" y1="1144" x2="480" y2="1298" stroke="#264B6B" stroke-opacity="0.28"/>
+  <line x1="80" y1="1218" x2="880" y2="1218" stroke="#264B6B" stroke-opacity="0.28"/>
+  <text x="84" y="1147" class="eyebrow mono" style="fill:#264B6B">FROM 01</text>
+  <text x="84" y="1177" class="record-title">Scope and acceptance record</text>
+  <text x="84" y="1205" class="record-copy">Objectives · constraints · criteria</text>
+  <text x="510" y="1147" class="eyebrow mono" style="fill:#264B6B">FROM 03–04</text>
+  <text x="510" y="1177" class="record-title">Source identity and audit record</text>
+  <text x="510" y="1205" class="record-copy">Pinned source · handoff · findings · severity</text>
+  <text x="84" y="1245" class="eyebrow mono" style="fill:#264B6B">FROM 05–07</text>
+  <text x="84" y="1273" class="record-title">Disposition and decision record</text>
+  <text x="84" y="1301" class="record-copy">Corrections · revisions · risk · approval</text>
+  <text x="510" y="1245" class="eyebrow mono" style="fill:#264B6B">FROM 08</text>
+  <text x="510" y="1273" class="record-title">Release identity</text>
+  <text x="510" y="1301" class="record-copy">Merge · tag · publication record</text>
+
+  <rect x="56" y="1352" width="848" height="84" rx="12" fill="#FFF0EE" stroke="#B42318" stroke-width="1.25"/>
+  <text x="82" y="1381" class="eyebrow mono" style="fill:#B42318">ASSURANCE BOUNDARY</text>
+  <text x="82" y="1413" class="boundary">Conceptual model, not private topology or external certification. Approval is not release.</text>
+
+  <text x="56" y="1476" class="eyebrow mono">ATA NASSERI · SYSTEM DESIGNER AND ASSURANCE OWNER</text>
+  <text x="904" y="1476" text-anchor="end" class="eyebrow mono">SYSTEM MAP</text>
+</svg>
